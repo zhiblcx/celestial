@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import BaseLayout from '@layouts/BaseLayout.astro'
+import HeroSection from '@components/blocks/HeroSection.astro'
+import BlogInsight from '@components/blog/BlogInsight.astro'
+import FeaturesSection from '@components/blocks/FeaturesSection.astro'
+import HeroSectionAlt from '@components/blocks/HeroSectionAlt.astro'
+import blogHeroImg from '@images/hero-landing.png'
+
+const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3)
+---
+
+<BaseLayout>
+  <HeroSection title=`Hello, <span class="text-yellow-500 dark:text-yellow-400">Celestial</span>` subTitle="Hi, Welcome to Celestial, Record file with care and regain new life here" primaryBtn="Explore Posts" primaryBtnURL="/posts" src={blogHeroImg} alt="godruoyi's blog" />
+
+  <FeaturesSection />
+
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+      <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight">Latest Post</h2>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">Always want to write something, but rarely actually do it</p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map(b => <BlogInsight blog={b} />)}
+    </div>
+  </section>
+
+  <HeroSectionAlt title="Fellow me on GitHub" subTitle="I love open source and have some small tools on my GitHub. You can get me more by checking out my code" url="https://github.com/godruoyi/gblog" />
+</BaseLayout>

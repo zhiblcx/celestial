@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import LeftSection from './blocks/LeftSection.astro'
+import RightSection from './blocks/RightSection.astro'
+
+const { blogs } = Astro.props
+
+interface Props {
+    blogs: CollectionEntry<'posts'>[]
+}
+
+const posts = blogs.slice(0, 5)
+---
+
+{
+    posts.map((b, index) => index % 2 === 0
+        ? (
+            <LeftSection
+                title={b.data.title}
+                subTitle={b.data.description}
+                btnExists={true}
+                btnTitle="Read More"
+                btnURL=`/posts/${b.slug}`
+                img={b.data.cardImage}
+                imgAlt={b.data.title}
+            />
+        )
+        : (
+            <RightSection
+                title={b.data.title}
+                subTitle={b.data.description}
+                btnExists={true}
+                btnTitle="Read More"
+                btnURL=`/posts/${b.slug}`
+                img={b.data.cardImage}
+                imgAlt={b.data.title}
+                single={!b.data.cardImage2}
+                imgOne={b.data.cardImage}
+                imgOneAlt={b.data.title}
+                imgTwo={b.data?.cardImage2}
+                imgTwoAlt={b.data.title}
+            />
+        ))
+}
