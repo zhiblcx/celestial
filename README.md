@@ -1,4 +1,4 @@
-# todo
+# astro
 
 Install the npm dependencies.
 
