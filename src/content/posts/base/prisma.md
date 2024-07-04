@@ -46,6 +46,10 @@ npx prisma init --datasource-provider mysql
 
 运行该命令后，项目会多两个文件 prisma 和 .env
 
++ **schema.prisma**：Prisma 的核心文件之一，包括数据库的模型定义，这些模型是数据库的表示，用于定义表的结构、关系以及其他 Prisma 客户端 API 需要的配置文件
+
++ **.env**：环境变量文件，用于存储数据库连接信息等敏感信息，避免直接在代码中硬编码这些信息
+
 ### 配置数据库连接信息
 
 在 .env 文件中配置数据库连接信息
