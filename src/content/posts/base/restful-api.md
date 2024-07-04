@@ -3,7 +3,7 @@ title: "RESTful API"
 description: "RESTful API 设计指南"
 pubDate: "2024-06-27 16:57:00"
 category: "base"
-cardImage: "@images/base/restful.png"
+cardImage: "@images/base/restful.jpg"
 tags: ["restful"]
 selected: true
 ---
