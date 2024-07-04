@@ -1,6 +1,6 @@
 ---
 title: "Date Error"
-description: "后端返回数据指定Date的错误"
+description: "后端返回数据指定 Date 的错误"
 pubDate: "2024-07-04 12:12:00"
 category: "admin"
 cardImage: "@images/admin/date.png"
