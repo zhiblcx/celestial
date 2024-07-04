@@ -1,14 +1,14 @@
 ---
-# title: "第一篇感想"
-# description: "初建博客，写下的感想"
-# pubDate: "2024-06-25 20:48:00"
-# category: "life"
-# cardImage: "@images/life/first-thought1.png"
-# tags: ["life",'thought']
-# selected: false
+title: "第一篇感想"
+description: "初建博客，写下的感想"
+pubDate: "2024-06-25 20:48:00"
+category: "life"
+cardImage: "@images/life/first-thought1.png"
+tags: ["life",'thought']
+selected: false
 ---
 
-<!-- ## 反省
+## 反省
 
 作为一名快大四的学生，反省前面大学生活，发现自己都是没什么主见的，喜欢高中那种被人布置作业的然后亦步亦趋的去完成。但是作为一位成年人，其实这是非常不妥的，这也是导致我后面越来越懒散，以至于回首回去，没什么值得回忆的。
 
@@ -18,4 +18,4 @@
 
 ## 目标
 
-我最近打算写一个管理系统以便去寻找一个自己满意的实习，希望自己能为此好好努力，不负韶华，不负卿。 -->
+我最近打算写一个管理系统以便去寻找一个自己满意的实习，希望自己能为此好好努力，不负韶华，不负卿。
