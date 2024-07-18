@@ -5,7 +5,7 @@ pubDate: '2024-07-18 09:00:00'
 category: 'ink-spell'
 cardImage: '@images/ink-spell/first.jpg'
 tags: ['ink-spell', 'spark-md5']
-selected: true
+selected: false
 ---
 
 ## 什么是增量散列文件
