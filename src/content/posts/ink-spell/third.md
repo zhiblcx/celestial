@@ -19,7 +19,6 @@ function Page() {
   const [books, setBooks] = useState(
     inkmock.map((item) => ({ ...item, checked: false }))
   )
-  console.log('22')
   return (
     <div className="flex flex-wrap min-[375px]:justify-center md:justify-start">
       {books.map((item, index) => {
