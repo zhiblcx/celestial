@@ -3,7 +3,7 @@ title: '阅读书籍'
 description: '解决阅读书籍问题'
 pubDate: '2024-07-21 22:33:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/fifth.jpg'
+cardImage: '@images/ink-spell/fifth.png'
 tags: ['ink-spell']
 selected: false
 ---
