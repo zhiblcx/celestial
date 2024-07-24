@@ -150,3 +150,38 @@ reg.test('/n') // false
 | \S     | 匹配非空格的字符，相当于`[^\t\r\n\v\f]`                   |
 
 > \t: 制表符(TAB)，\r: 回车符(CR)，\v: 垂直制表符(VT)，\f: 换页符(FF)
+
+## 分组
+
+分组捕获：例如将YYYY-MM-DD格式的日期替换成MM/DD/YYYY
+
+YYYY-MM-DD的匹配模式为 **/\d{4}-\d{2}-\d{2}/**，是将整个日期作为一个组(group)匹配起来。我们把这样的叫 **Group0**.
+
+如果改成 **/(\d{4})-(\d{2})-(\d{2})/**，那么分组是下面这个情况
+
+```txt
+YYYY-MM-DD Group0
+YYYY       Group1
+MM         Group2
+DD         Group3
+```
+
+```js
+const data = '2024-07-24'
+const reg = /(\d{4})-(\d{2})-(\d{2})/
+console.log(data.replace(reg, '$2/$3/$1')) // 07/24/2024
+```
+
+## 分支结构
+
+分支结构类似操作中的或操作，表示匹配规则1或者规则2
+
+```js
+const reg = /xx|yy/
+const str = 'you are xx'
+const str2 = 'you are yy'
+const str3 = 'you are zz'
+reg.test(str) // true
+reg.test(str2) // true
+reg.test(str3) // false
+```
