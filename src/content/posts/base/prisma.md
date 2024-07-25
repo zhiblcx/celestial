@@ -88,6 +88,14 @@ model Post {
 
 ### 生成 Prsima Client 代码
 
+对于空项目可以使用这个，与数据库同步
+
+```bash
+ npx prisma db push
+```
+
+这个是数据库迁移
+
 ```bash
 npx prisma migrate dev
 ```
@@ -218,5 +226,3 @@ async function deletePostById() {
 ```
 
 删除成功
-
-## prisma seed
