@@ -1,10 +1,10 @@
 ---
-title: "初学 prisma"
-description: "prisma 的简单操作"
-pubDate: "2024-07-04 13:34:00"
-category: "base"
-cardImage: "@images/base/prisma.png"
-tags: ["base",'prisma','mysql']
+title: '初学 prisma'
+description: 'prisma 的简单操作'
+pubDate: '2024-07-04 13:34:00'
+category: 'base'
+cardImage: '@images/base/prisma.png'
+tags: ['base', 'prisma', 'mysql']
 selected: true
 ---
 
@@ -46,9 +46,9 @@ npx prisma init --datasource-provider mysql
 
 运行该命令后，项目会多两个文件 prisma 和 .env
 
-+ **schema.prisma**：Prisma 的核心文件之一，包括数据库的模型定义，这些模型是数据库的表示，用于定义表的结构、关系以及其他 Prisma 客户端 API 需要的配置文件
+- **schema.prisma**：Prisma 的核心文件之一，包括数据库的模型定义，这些模型是数据库的表示，用于定义表的结构、关系以及其他 Prisma 客户端 API 需要的配置文件
 
-+ **.env**：环境变量文件，用于存储数据库连接信息等敏感信息，避免直接在代码中硬编码这些信息
+- **.env**：环境变量文件，用于存储数据库连接信息等敏感信息，避免直接在代码中硬编码这些信息
 
 ### 配置数据库连接信息
 
@@ -94,6 +94,8 @@ npx prisma migrate dev
 
 也可以通过 **npx prisma migrate dev --name test** 指定名字
 
+Prisma Migrate 为 Prisma 架构中的声明性数据模型定义生成 SQL 迁移文件。
+
 运行该命令后会在 prisma 文件夹下生成一些文件，其中包括 .sql文件，并且在数据库中也生成了对应的表
 
 如果修改了表里面的数据或者添加了，都需要先执行以下这个命令
@@ -111,14 +113,14 @@ async function createUser() {
   await prisma.user.create({
     data: {
       name: 'alice',
-      email: 'alice@gmail.com'
-    }
+      email: 'alice@gmail.com',
+    },
   }),
     await prisma.user.create({
       data: {
         name: 'nicole',
-        email: 'nicole@gmail.com'
-      }
+        email: 'nicole@gmail.com',
+      },
     })
 
   const users = prisma.user.findMany()
@@ -151,15 +153,15 @@ async function createPost() {
         create: [
           {
             title: 'post 1',
-            content: 'content 1'
+            content: 'content 1',
           },
           {
             title: 'post 2',
-            content: 'content 2'
-          }
-        ]
-      }
-    }
+            content: 'content 2',
+          },
+        ],
+      },
+    },
   })
   console.log(user)
 }
@@ -178,9 +180,9 @@ const prisma = new PrismaClient({
   log: [
     {
       emit: 'stdout',
-      level: 'query' // 设置日志级别为查询（query），这样只有查询语句会被记录
-    }
-  ]
+      level: 'query', // 设置日志级别为查询（query），这样只有查询语句会被记录
+    },
+  ],
 })
 ```
 
@@ -190,11 +192,11 @@ const prisma = new PrismaClient({
 async function updatePost() {
   await prisma.post.update({
     where: {
-      id: 2
+      id: 2,
     },
     data: {
-      content: '修改'
-    }
+      content: '修改',
+    },
   })
 }
 ```
@@ -210,9 +212,11 @@ async function updatePost() {
 ```typescript
 async function deletePostById() {
   await prisma.post.delete({
-    where: { id: 1 }
+    where: { id: 1 },
   })
 }
 ```
 
 删除成功
+
+## prisma seed
