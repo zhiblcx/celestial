@@ -42,3 +42,5 @@ export class AppModule {}
 ```
 
 ![](@images/ink-spell/ninth/image.png)
+
+[详情可见官网](https://docs.nestjs.com/recipes/serve-static#configuration)
