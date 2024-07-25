@@ -91,3 +91,5 @@ npm install dotenv
 然后运行 `npm run prisma:seed` 就可以了
 
 这时候发现数据库已经有数据了。
+
+[详情请见官网](https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding)
