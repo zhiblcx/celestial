@@ -99,13 +99,15 @@ export class PrismaClientExceptionFilter extends BaseExceptionFilter {
 
 现在，对于 PrismaClientExceptionFilter 来说要想发挥错用，你需要将其应用到合适的作用域中。异常过滤器作用域可以被限定为单个路由（方法作用域），整个控制器（控制器作用域）或整个应用程序（全局作用域）。
 
+方法一：
+
 可以通过更新 main.ts 文件将异常过滤器应用到整个应用中：
 
 ```ts
 import { HttpAdapterHost, NestFactory } from '@nestjs/core'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { AppModule } from './app.module'
-import { PrismaClientExceptionFilter } from './prisma-client-exception.filter'
+import { PrismaExceptionFilter } from './core/prisma-client-exception/prisma-client-exception.filter'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
@@ -120,11 +122,24 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document)
 
   const { httpAdapter } = app.get(HttpAdapterHost)
-  app.useGlobalFilters(new PrismaClientExceptionFilter(httpAdapter))
+  app.useGlobalFilters(new PrismaExceptionFilter(httpAdapter))
 
   await app.listen(3000)
 }
 bootstrap()
+```
+
+方法二：
+
+你也可以将异常过滤器注入控制器中，如下所示：
+
+```ts
+import { PrismaExceptionFilter } from './core/prisma-client-exception/prisma-client-exception.filter'
+@Module({
+  controllers: [],
+  providers: [{ provide: APP_FILTER, useClass: PrismaExceptionFilter }],
+})
+export class AppModule {}
 ```
 
 ## 使用 nestjs-prisma 包来处理 Prisma 异常
