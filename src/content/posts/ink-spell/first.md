@@ -2,6 +2,7 @@
 title: '增量散列文件'
 description: '解决导入不重复书籍'
 pubDate: '2024-07-18 09:00:00'
+updateDate: '2024-08-09 14:45:00'
 category: 'ink-spell'
 cardImage: '@images/ink-spell/first.jpg'
 tags: ['ink-spell', 'spark-md5']
@@ -29,10 +30,10 @@ selected: false
 
 ```ts
 document.getElementById('file').addEventListener('change', function () {
-  const blobSlice =
-    File.prototype.slice ||
-    File.prototype.mozSlice ||
-    File.prototype.webkitSlice
+  const blobSlice
+    = File.prototype.slice
+    || File.prototype.mozSlice
+    || File.prototype.webkitSlice
   const file = this.files[0]
   const chunkSize = 2097152 // Read in chunks of 2MB
   const chunks = Math.ceil(file.size / chunkSize)
@@ -47,7 +48,8 @@ document.getElementById('file').addEventListener('change', function () {
 
     if (currentChunk < chunks) {
       loadNext()
-    } else {
+    }
+    else {
       console.log('finished loading')
       console.info('computed hash', spark.end()) // Compute hash
     }
@@ -73,3 +75,58 @@ document.getElementById('file').addEventListener('change', function () {
 ![''](@images/ink-spell/first/image.png)
 
 同样内容的文件这个散列值是一样的，通过这个值，可以实现导入不重复的书籍
+
+**ink-spell 的使用**
+
+```ts
+export class Md5Utils {
+  static getFileMD5(file: File): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      try {
+        const blobSlice =
+          (File as any).prototype.slice ||
+          (File as any).prototype.mozSlice ||
+          (File as any).prototype.webkitSlice
+        const chunkSize = 2097152 // 以每片2MB大小来逐次读取
+        const chunks = Math.ceil(file.size / chunkSize)
+        let currentChunk = 0
+        const spark = new SparkMD5.ArrayBuffer()
+        const fileReader = new FileReader()
+
+        fileReader.onload = async (e) => {
+          spark.append(e.target?.result as ArrayBuffer)
+          currentChunk++
+          if (currentChunk < chunks) {
+            loadNext()
+          } else {
+            resolve(spark.end())
+          }
+        }
+
+        const loadNext = () => {
+          const start = currentChunk * chunkSize
+          const end =
+            start + chunkSize >= file.size ? file.size : start + chunkSize
+          fileReader.readAsArrayBuffer(blobSlice.call(file, start, end))
+        }
+
+        loadNext()
+      } catch (err) {
+        reject('')
+      }
+    })
+  }
+
+  static fetchFileFromPath(filePath: string) {
+    return new Promise<File>((resolve) => {
+      fs.readFile(filePath, (_, data) => {
+        if (_) {
+          return
+        }
+        const file = new File([data], Date.now().toString())
+        resolve(file)
+      })
+    })
+  }
+}
+```
