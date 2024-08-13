@@ -1,10 +1,10 @@
 ---
-title: "初学 swagger"
-description: "在 nest 中 swagger 的使用"
-pubDate: "2024-07-05 15:03:00"
-category: "base"
-cardImage: "@images/base/swagger.png"
-tags: ["restful",'swagger']
+title: '初学 swagger'
+description: '在 nest 中 swagger 的使用'
+pubDate: '2024-07-05 15:03:00'
+category: 'base'
+cardImage: '@images/base/swagger.png'
+tags: ['restful', 'swagger']
 selected: true
 ---
 
@@ -40,28 +40,28 @@ npm install @nestjs/swagger swagger-ui-express -S
 然后在 main.js 进行引入配置
 
 ```typescript
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { NestFactory } from '@nestjs/core'
+import { AppModule } from './app.module'
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule)
   const options = new DocumentBuilder()
     .setTitle('FS_ADMIN') // 标题
     .setDescription('后台管理系统接口文档') // 描述
     .setVersion('1.0') // 版本
-    .build();
-  const document = SwaggerModule.createDocument(app, options);
+    .build()
+  const document = SwaggerModule.createDocument(app, options)
   //配置swgger地址
-  SwaggerModule.setup('/fs_admin/api', app, document);
-  await app.listen(3000);
+  SwaggerModule.setup('/fs_admin/api', app, document)
+  await app.listen(3000)
 }
-bootstrap();
+bootstrap()
 ```
 
-+ **DocumentBuilder** 是 Swagger 模块中的一个类，用于构建 Swagger 文档的基本信息。
-+ **SwaggerModule.createDocument(app, swaggerConfig)** ：根据传入的应用实例和之前构建的文档配置对象，创建 Swagger 文档。
-+ **SwaggerModule.setup('/fs_admin/api', app, document)** ：将生成的 Swagger 文档设置在指定的路径上（这里是 '**/fs_admin/api**'），以便 Swagger UI 可以通过该路径访问文档。
+- **DocumentBuilder** 是 Swagger 模块中的一个类，用于构建 Swagger 文档的基本信息。
+- **SwaggerModule.createDocument(app, swaggerConfig)** ：根据传入的应用实例和之前构建的文档配置对象，创建 Swagger 文档。
+- **SwaggerModule.setup('/fs_admin/api', app, document)** ：将生成的 Swagger 文档设置在指定的路径上（这里是 '**/fs_admin/api**'），以便 Swagger UI 可以通过该路径访问文档。
 
 ## 🥂 **DocumentBuilder常用的属性配置**
 
@@ -116,19 +116,19 @@ export class UserController {
 接着在 create-user-dto.ts 中，定义前端传过来的参数
 
 ```typescript
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger'
 
 export class CreateUserDto {
   @ApiProperty({
     example: 'admin',
     description: '用户名',
   })
-  username: string;
+  username: string
   @ApiProperty({
     example: '123456',
     description: '密码',
   })
-  password: string;
+  password: string
 }
 ```
 
@@ -137,14 +137,14 @@ export class CreateUserDto {
 可以看到示例值有了，接下来我们在 user 文件夹下创建 vo/create-user.vo.ts 用来描述这个接口的返回值
 
 ```typescript
-import { ApiProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger'
 export class CreateUserVo {
   @ApiProperty({ example: 200 })
-  code: number;
+  code: number
   @ApiProperty({ example: {} })
-  data: object;
+  data: object
   @ApiProperty({ example: '请求成功' })
-  message: string;
+  message: string
 }
 ```
 
@@ -174,11 +174,11 @@ export class UserController {
 
 ```typescript
 const options = new DocumentBuilder()
-    .setTitle('FS_ADMIN') // 标题
-    .setDescription('后台管理系统接口文档') // 描述
-    .setVersion('1.0') // 版本
-    .addBearerAuth()
-    .build();
+  .setTitle('FS_ADMIN') // 标题
+  .setDescription('后台管理系统接口文档') // 描述
+  .setVersion('1.0') // 版本
+  .addBearerAuth()
+  .build()
 ```
 
 接着在需要认证的接口上添加 **@ApiBearerAuth** 装饰器
@@ -201,15 +201,17 @@ const options = new DocumentBuilder()
 
 ## 🥂 **常用的Swagger 装饰器**
 
-| **装饰器**              | 描述                                                     | **使用场景**                                                 |
-| :---------------------- | :------------------------------------------------------- | ------------------------------------------------------------ |
-| **@ApiTags**            | 为控制器或方法添加标签，用于组织 Swagger UI 文档         | 标明控制器或方法所属的领域，使文档更易于组织                 |
-| **@ApiOperation**       | 为控制器方法添加操作描述，包括摘要和详细描述             | 提供关于 API 操作的清晰说明，方便开发者理解 API 的作用       |
-| **@ApiParam**           | 描述路径参数、请求参数或响应参数，包括名称、类型、描述等 | 提供详细的参数信息，方便开发者正确使用和理解 API             |
-| **@ApiBody**            | 指定请求体的 DTO 类型，用于描述请求体的结构              | 明确请求体的结构，帮助开发者正确发送请求                     |
-| **@ApiResponse**        | 描述 API 的响应，包括状态码、描述等。                    | 提供关于 API 响应的详细说明，方便开发者处理各种响应情况      |
-| **@ApiBearerAuth**      | 指定请求需要携带 Bearer Token，用于身份验证              | 在需要身份验证的接口中使用，指定需要提供 Token 信息          |
-| **@ApiProperty**        | 为 DTO 类型的属性添加元数据，如描述、默认值等            | 提供详细的属性信息，使开发者了解 DTO 对象的结构和约束        |
-| **@ApiQuery**           | 描述查询参数，包括名称、类型、描述等                     | 用于标识查询参数，使开发者清晰了解 API 的可用查询选项        |
-| **@ApiHeader**          | 描述请求头信息，包括名称、类型、描述等                   | 提供请求头的详细信息，使开发者正确设置请求头                 |
+| **装饰器**              | 描述                                                     | **使用场景**                                                   |
+| :---------------------- | :------------------------------------------------------- | -------------------------------------------------------------- |
+| **@ApiTags**            | 为控制器或方法添加标签，用于组织 Swagger UI 文档         | 标明控制器或方法所属的领域，使文档更易于组织                   |
+| **@ApiOperation**       | 为控制器方法添加操作描述，包括摘要和详细描述             | 提供关于 API 操作的清晰说明，方便开发者理解 API 的作用         |
+| **@ApiParam**           | 描述路径参数、请求参数或响应参数，包括名称、类型、描述等 | 提供详细的参数信息，方便开发者正确使用和理解 API               |
+| **@ApiBody**            | 指定请求体的 DTO 类型，用于描述请求体的结构              | 明确请求体的结构，帮助开发者正确发送请求                       |
+| **@ApiResponse**        | 描述 API 的响应，包括状态码、描述等。                    | 提供关于 API 响应的详细说明，方便开发者处理各种响应情况        |
+| **@ApiBearerAuth**      | 指定请求需要携带 Bearer Token，用于身份验证              | 在需要身份验证的接口中使用，指定需要提供 Token 信息            |
+| **@ApiProperty**        | 为 DTO 类型的属性添加元数据，如描述、默认值等            | 提供详细的属性信息，使开发者了解 DTO 对象的结构和约束          |
+| **@ApiQuery**           | 描述查询参数，包括名称、类型、描述等                     | 用于标识查询参数，使开发者清晰了解 API 的可用查询选项          |
+| **@ApiHeader**          | 描述请求头信息，包括名称、类型、描述等                   | 提供请求头的详细信息，使开发者正确设置请求头                   |
 | **@ApiExcludeEndpoint** | 标记一个控制器方法不在 Swagger UI 中显示                 | 在一些特殊情况下，可以使用该装饰器排除不需要在文档中展示的接口 |
+
+[详情请看 swagger 官网文档](https://swagger.io/docs/specification/about/)
