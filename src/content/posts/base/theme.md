@@ -3,7 +3,7 @@ title: 'tailwindcss 暗夜模式'
 description: 'tailwindcss 如何实现暗夜模式'
 pubDate: '2024-07-13 13:53:00'
 category: 'base'
-cardImage: '@images/base/swagger.png'
+cardImage: '@images/base/tailwindcss.jpg'
 tags: ['tailwindcss', 'dark', 'theme']
 selected: false
 ---
