@@ -10,7 +10,16 @@ selected: false
 
 为了减少存储空间的占用，提高数据传输速度，这里采用了压缩图片，因为 png 图片动不动就是几百kb，所以主要是对 png 图片进行了压缩。
 
+使用 **upng-js** 来进行压缩
+
+```bash
+pnpm add upng-js
+```
+
+安装完毕后，在前端进行压缩，代码如下：
+
 ```ts
+import UPNG from 'upng-js'
 function compressPNG(file: File, quality = 0.2) {
   return new Promise(async (resolve) => {
     const arrayBuffer = await file.arrayBuffer()
