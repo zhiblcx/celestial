@@ -99,6 +99,21 @@ ALTER USER postgres WITH PASSWORD 'Lpf65BsDhDNdaJmH';
 
 # 创建数据库
 CREATE DATABASE dbname;
+
+# 查看已经存在的数据库
+
+\l
+
+# 切换数据库 \c + 数据库名
+\c dbname
+
+# 查看已经存在的表
+\d
+
+# 查看表格信息
+
+\d tablename
+
 ```
 
 在 ubuntu 添加 [node](https://nodejs.org/zh-cn/download/prebuilt-binaries) 包，这里不用 nvm 我一直下不了 node。
