@@ -1,5 +1,4 @@
 ---
-
 title: 'es6系列 —— 对象新增了哪些扩展'
 description: '对象新增了哪些扩展'
 pubDate: '2024-09-07 15:23:00'
@@ -14,9 +13,9 @@ selected: true
 ES6 中，当对象键名和对应值名相等的时候，可以进行简写
 
 ```js
-const baz = {foo:foo}
+const baz = { foo: foo }
 // 等同于
-const baz = {foo}
+const baz = { foo }
 ```
 
 方法也能进行简写
@@ -25,14 +24,14 @@ const baz = {foo}
 const o = {
   method: function () {
     return 'hello'
-  }
+  },
 }
 
 // 等同于
 const o = {
   method() {
     return 'hello'
-  }
+  },
 }
 ```
 
@@ -54,7 +53,7 @@ console.log(func()) // { x: 1, y: 2 }
 const obj = {
   f() {
     this.foo = 'bar'
-  }
+  },
 }
 
 new obj.f() // TypeError: obj.f is not a constructor
@@ -69,7 +68,7 @@ const lastWord = 'last word'
 
 const obj = {
   'first word': 'hello',
-  [lastWord]: 'world'
+  [lastWord]: 'world',
 }
 
 console.log(obj['first word']) // hello
@@ -83,7 +82,7 @@ console.log(obj['last word']) // world
 const obj = {
   ['h' + 'ello']() {
     return 'hi'
-  }
+  },
 }
 
 console.log(obj.hello()) // hi
@@ -109,7 +108,7 @@ const keyB = { b: 1 }
 
 const myObject = {
   [keyA]: 'valueA',
-  [keyB]: 'valueB'
+  [keyB]: 'valueB',
 }
 
 console.log(myObject) // { '[object Object]': 'valueB' }
@@ -117,13 +116,13 @@ console.log(myObject) // { '[object Object]': 'valueB' }
 
 ## 三、super 关键字
 
- **this** 关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字 **super**，指向当前对象的原型对象
+**this** 关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字 **super**，指向当前对象的原型对象
 
 ```js
 const proto = {
   sayHi() {
     console.log('hi')
-  }
+  },
 }
 
 const obj = {
@@ -132,7 +131,7 @@ const obj = {
   },
   find() {
     super.sayHi()
-  }
+  },
 }
 
 Object.setPrototypeOf(obj, proto) // 为 obj 设置原型对象
@@ -189,7 +188,7 @@ ES6 一共有 5 种方法可以遍历对象的属性
 - 最后遍历所有 Symbol 键，按照加入时间升序排
 
 ```js
-Reflect.ownKeys({ [Symbol()]: 0, c: 2, a: 3, 1: 1 }) 
+Reflect.ownKeys({ [Symbol()]: 0, c: 2, a: 3, 1: 1 })
 // [ '1', 'c', 'a', Symbol() ]
 ```
 
@@ -209,11 +208,11 @@ Reflect.ownKeys({ [Symbol()]: 0, c: 2, a: 3, 1: 1 })
 严格判断两个值是否相等，与严格比较运算符（===）的行为基本一致，不同之处只有两个：一是 **+0** 不等于 **-0**，二是 **NaN** 等于自身
 
 ```js
-+0 === -0 // true
-NaN === NaN // false
+;+0 === -0 // true
+Number.NaN === Number.NaN // false
 
 Object.is(+0, -0) // false
-Object.is(NaN, NaN) // true
+Object.is(Number.NaN, Number.NaN) // true
 ```
 
 ### Object.assign()
@@ -242,7 +241,7 @@ const obj = {
   foo: 123,
   get bar() {
     return 'abc'
-  }
+  },
 }
 
 console.log(Object.getOwnPropertyDescriptors(obj))
@@ -269,19 +268,26 @@ Object.setPrototypeOf(object, prototype)
 const o = Object.setPrototypeOf({}, null)
 
 const obj = {
-  a: 1
+  a: 1,
 }
 
 const obj2 = {
   a: 2,
   show() {
     console.log(super.a)
-  }
+  },
 }
 
 obj2.show() // undefined
 Object.setPrototypeOf(obj2, obj)
 obj2.show() // 1
+```
+
+**Object.getPrototypeOf()**
+用于读取一个对象的原型对象
+
+```js
+Object.getPrototypeOf(obj)
 ```
 
 ### Object.keys()，Object.values()，Object.entries()
@@ -293,7 +299,7 @@ obj2.show() // 1
 ```js
 const person = {
   name: 'nicole',
-  age: 20
+  age: 20,
 }
 Object.keys(person) //  [ 'name', 'age' ]
 ```
@@ -305,7 +311,7 @@ Object.keys(person) //  [ 'name', 'age' ]
 ```js
 const person = {
   name: 'nicole',
-  age: 20
+  age: 20,
 }
 Object.values(person) // [ 'nicole', 20 ]
 ```
@@ -317,7 +323,7 @@ Object.values(person) // [ 'nicole', 20 ]
 ```js
 const person = {
   name: 'nicole',
-  age: 20
+  age: 20,
 }
 Object.entries(person) // [ [ 'name', 'nicole' ], [ 'age', 20 ] ]
 ```
@@ -329,7 +335,7 @@ Object.entries(person) // [ [ 'name', 'nicole' ], [ 'age', 20 ] ]
 ```js
 const obj = Object.fromEntries([
   ['name', 'nicole'],
-  ['age', 20]
+  ['age', 20],
 ])
 
 obj // { name: 'nicole', age: 20 }
