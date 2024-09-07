@@ -1,6 +1,6 @@
 ---
-title: '原型和原型链'
-description: '深入理解原型和原型链'
+title: 'vue系列 —— 对 vue 的理解'
+description: '对 vue 的理解'
 pubDate: '2024-09-06 19:05:00'
 category: 'interview'
 cardImage: '@images/interview/vue/vue-understand.png'
