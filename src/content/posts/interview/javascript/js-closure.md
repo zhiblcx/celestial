@@ -1,5 +1,5 @@
 ---
-title: 'javascript系列 —— 对闭包的理解、闭包的使用场景s'
+title: 'javascript系列 —— 对闭包的理解、闭包的使用场景'
 description: '面试官：说说你对闭包的理解？闭包使用场景'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
@@ -20,13 +20,14 @@ selected: true
 
 ```js
 function init() {
-    var name = "Mozilla"; // name 是一个被 init 创建的局部变量
-    function displayName() { // displayName() 是内部函数，一个闭包
-        alert(name); // 使用了父函数中声明的变量
-    }
-    displayName();
+  const name = 'Mozilla' // name 是一个被 init 创建的局部变量
+  function displayName() {
+    // displayName() 是内部函数，一个闭包
+    alert(name) // 使用了父函数中声明的变量
+  }
+  displayName()
 }
-init();
+init()
 ```
 
 **displayName()** 没有自己的局部变量。然而，由于闭包的特性，它可以访问到外部函数的变量
@@ -46,18 +47,18 @@ init();
 
 ```js
 function makeSizer(size) {
-  return function() {
-    document.body.style.fontSize = size + 'px';
-  };
+  return function () {
+    document.body.style.fontSize = `${size}px`
+  }
 }
 
-var size12 = makeSizer(12);
-var size14 = makeSizer(14);
-var size16 = makeSizer(16);
+const size12 = makeSizer(12)
+const size14 = makeSizer(14)
+const size16 = makeSizer(16)
 
-document.getElementById('size-12').onclick = size12;
-document.getElementById('size-14').onclick = size14;
-document.getElementById('size-16').onclick = size16;
+document.getElementById('size-12').onclick = size12
+document.getElementById('size-14').onclick = size14
+document.getElementById('size-16').onclick = size16
 ```
 
 ### 柯里化函数
@@ -67,7 +68,7 @@ document.getElementById('size-16').onclick = size16;
 ```js
 // 假设我们有一个求长方形面积的函数
 function getArea(width, height) {
-    return width * height
+  return width * height
 }
 // 如果我们碰到的长方形的宽老是10
 const area1 = getArea(10, 20)
@@ -76,9 +77,9 @@ const area3 = getArea(10, 40)
 
 // 我们可以使用闭包柯里化这个计算面积的函数
 function getArea(width) {
-    return height => {
-        return width * height
-    }
+  return (height) => {
+    return width * height
+  }
 }
 
 const getTenWidthArea = getArea(10)
@@ -96,26 +97,26 @@ const getTwentyWidthArea = getArea(20)
 下面举个例子：
 
 ```js
-var Counter = function () {
-  var privateCounter = 0
+const Counter = function () {
+  let privateCounter = 0
   function changeBy(val) {
     privateCounter += val
   }
   return {
-    increment: function () {
+    increment() {
       changeBy(1)
     },
-    decrement: function () {
+    decrement() {
       changeBy(-1)
     },
-    value: function () {
+    value() {
       return privateCounter
-    }
+    },
   }
 }
 
-var Counter1 = Counter()
-var Counter2 = Counter()
+const Counter1 = Counter()
+const Counter2 = Counter()
 console.log(Counter1.value()) /* logs 0 */
 Counter1.increment()
 Counter1.increment()
@@ -143,15 +144,15 @@ console.log(Counter2.value()) /* logs 0 */
 
 ```js
 function MyObject(name, message) {
-  this.name = name.toString();
-  this.message = message.toString();
-  this.getName = function() {
-    return this.name;
-  };
+  this.name = name.toString()
+  this.message = message.toString()
+  this.getName = function () {
+    return this.name
+  }
 
-  this.getMessage = function() {
-    return this.message;
-  };
+  this.getMessage = function () {
+    return this.message
+  }
 }
 ```
 
@@ -159,15 +160,15 @@ function MyObject(name, message) {
 
 ```js
 function MyObject(name, message) {
-  this.name = name.toString();
-  this.message = message.toString();
+  this.name = name.toString()
+  this.message = message.toString()
 }
-MyObject.prototype.getName = function() {
-  return this.name;
-};
-MyObject.prototype.getMessage = function() {
-  return this.message;
-};
+MyObject.prototype.getName = function () {
+  return this.name
+}
+MyObject.prototype.getMessage = function () {
+  return this.message
+}
 ```
 
 [本章来源](https://vue3js.cn/interview/JavaScript/closure.html)
