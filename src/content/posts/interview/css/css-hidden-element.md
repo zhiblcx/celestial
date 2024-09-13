@@ -3,7 +3,7 @@ title: 'css系列 —— 隐藏页面元素'
 description: '面试官：css中，有哪些方式可以隐藏页面元素？区别?'
 pubDate: '2024-09-10 20:33:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-hidden-element.png'
+cardImage: '@images/interview/css/main/css-hidden-element.png'
 tags: ['interview']
 selected: true
 ---
@@ -33,7 +33,7 @@ selected: true
 
 ```css
 .hide {
-    display:none;
+  display: none;
 }
 ```
 
@@ -52,8 +52,8 @@ selected: true
 从页面上仅仅是隐藏该元素，DOM 结果均会存在，只是当时在一个不可见的状态，不会触发重排，但是会触发重绘
 
 ```css
-.hidden{
-    visibility:hidden
+.hidden {
+  visibility: hidden;
 }
 ```
 
@@ -67,11 +67,11 @@ opacity 属性表示元素的透明度，将元素的透明度设置为 0 后，
 
 不会引发重排，一般情况下也会引发重绘
 
->如果利用 animation 动画，对 opacity 做变化（animation 会默认触发GPU加速），则只会触发 GPU 层面的 composite，不会触发重绘
+> 如果利用 animation 动画，对 opacity 做变化（animation 会默认触发GPU加速），则只会触发 GPU 层面的 composite，不会触发重绘
 
 ```css
 .transparent {
-    opacity:0;
+  opacity: 0;
 }
 ```
 
@@ -87,12 +87,12 @@ opacity 属性表示元素的透明度，将元素的透明度设置为 0 后，
 
 ```css
 .hiddenBox {
-    margin:0;     
-    border:0;
-    padding:0;
-    height:0;
-    width:0;
-    overflow:hidden;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 ```
 
@@ -104,9 +104,9 @@ opacity 属性表示元素的透明度，将元素的透明度设置为 0 后，
 
 ```css
 .hide {
-   position: absolute;
-   top: -9999px;
-   left: -9999px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 ```
 
@@ -118,7 +118,7 @@ opacity 属性表示元素的透明度，将元素的透明度设置为 0 后，
 
 ```css
 .hide {
-  clip-path: polygon(0px 0px,0px 0px,0px 0px,0px 0px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
 }
 ```
 
