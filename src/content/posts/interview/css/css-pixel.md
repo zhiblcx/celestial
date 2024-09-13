@@ -3,7 +3,7 @@ title: 'css系列 —— 设备像素、css像素、设备独立像素、dpr、p
 description: '面试官：说说设备像素、css像素、设备独立像素、dpr、ppi 之间的区别？'
 pubDate: '2024-09-10 19:43:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-pixel.png'
+cardImage: '@images/interview/css/main/css-pixel.png'
 tags: ['interview']
 selected: true
 ---
@@ -18,7 +18,7 @@ selected: true
 
 当我们做移动端开发时，同为1px的设置，在不同分辨率的移动设备上显示效果却有很大差异
 
-这背后就涉及了**css像素**、**设备像素**、**设备独立像素**、**dpr**、**ppi **的概念
+这背后就涉及了**css像素**、**设备像素**、**设备独立像素**、**dpr**、**ppi**的概念
 
 ## 二、介绍
 

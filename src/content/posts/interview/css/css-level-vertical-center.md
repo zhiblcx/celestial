@@ -3,7 +3,7 @@ title: 'css系列 —— 元素水平垂直居中的方法'
 description: '面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？'
 pubDate: '2024-09-11 15:09:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-level-vertical-center.jpg'
+cardImage: '@images/interview/css/main/css-level-vertical-center.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -138,23 +138,23 @@ selected: true
 
 ```html
 <style>
-    .father {
-        display: table-cell;
-        width: 200px;
-        height: 200px;
-        background: skyblue;
-        vertical-align: middle;
-        text-align: center;
-    }
-    .son {
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        background: red;
-    }
+  .father {
+    display: table-cell;
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .son {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red;
+  }
 </style>
 <div class="father">
-    <div class="son"></div>
+  <div class="son"></div>
 </div>
 ```
 
@@ -164,22 +164,22 @@ selected: true
 
 ```html
 <style>
-    .father {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 200px;
-        background: skyblue;
-    }
-    .son {
-        width: 100px;
-        height: 100px;
-        background: red;
-    }
+  .father {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+  }
+  .son {
+    width: 100px;
+    height: 100px;
+    background: red;
+  }
 </style>
 <div class="father">
-    <div class="son"></div>
+  <div class="son"></div>
 </div>
 ```
 
@@ -195,23 +195,22 @@ css3 中了 flex 布局，可以非常简单实现垂直水平居中
 
 ```html
 <style>
-    .father {
-            display: grid;
-            align-items:center;
-            justify-content: center;
-            width: 200px;
-            height: 200px;
-            background: skyblue;
-
-        }
-        .son {
-            width: 10px;
-            height: 10px;
-            border: 1px solid red
-        }
+  .father {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: skyblue;
+  }
+  .son {
+    width: 10px;
+    height: 10px;
+    border: 1px solid red;
+  }
 </style>
 <div class="father">
-    <div class="son"></div>
+  <div class="son"></div>
 </div>
 ```
 

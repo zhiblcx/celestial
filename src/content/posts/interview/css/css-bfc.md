@@ -3,7 +3,7 @@ title: 'css系列 —— BFC'
 description: '面试官：谈谈你对BFC的理解？'
 pubDate: '2024-09-11 11:43:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-bfc.jpg'
+cardImage: '@images/interview/css/main/css-bfc.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -75,23 +75,23 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 
 ```html
 <style>
-    .wrap {
-        overflow: hidden;// 新的BFC
-    }
-    p {
-        color: #f55;
-        background: #fcc;
-        width: 200px;
-        line-height: 100px;
-        text-align:center;
-        margin: 100px;
-    }
+  .wrap {
+      overflow: hidden;// 新的BFC
+  }
+  p {
+      color: #f55;
+      background: #fcc;
+      width: 200px;
+      line-height: 100px;
+      text-align:center;
+      margin: 100px;
+  }
 </style>
 <body>
-    <p>Haha</p >
-    <div class="wrap">
-        <p>Hehe</p >
-    </div>
+  <p>Haha</p>
+  <div class="wrap">
+    <p>Hehe</p>
+  </div>
 </body>
 ```
 
@@ -101,23 +101,23 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 
 ```html
 <style>
-    .par {
-        border: 5px solid #fcc;
-        width: 300px;
-    }
- 
-    .child {
-        border: 5px solid #f66;
-        width:100px;
-        height: 100px;
-        float: left;
-    }
+  .par {
+    border: 5px solid #fcc;
+    width: 300px;
+  }
+
+  .child {
+    border: 5px solid #f66;
+    width: 100px;
+    height: 100px;
+    float: left;
+  }
 </style>
 <body>
-    <div class="par">
-        <div class="child"></div>
-        <div class="child"></div>
-    </div>
+  <div class="par">
+    <div class="child"></div>
+    <div class="child"></div>
+  </div>
 </body>
 ```
 
@@ -129,7 +129,7 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 
 ```css
 .par {
-    overflow: hidden;
+  overflow: hidden;
 }
 ```
 
@@ -143,26 +143,26 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 
 ```html
 <style>
-    body {
-        width: 300px;
-        position: relative;
-    }
- 
-    .aside {
-        width: 100px;
-        height: 150px;
-        float: left;
-        background: #f66;
-    }
- 
-    .main {
-        height: 200px;
-        background: #fcc;
-    }
+  body {
+    width: 300px;
+    position: relative;
+  }
+
+  .aside {
+    width: 100px;
+    height: 150px;
+    float: left;
+    background: #f66;
+  }
+
+  .main {
+    height: 200px;
+    background: #fcc;
+  }
 </style>
 <body>
-    <div class="aside"></div>
-    <div class="main"></div>
+  <div class="aside"></div>
+  <div class="main"></div>
 </body>
 ```
 
@@ -180,7 +180,7 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 
 ```css
 .main {
-    overflow: hidden;
+  overflow: hidden;
 }
 ```
 
@@ -191,8 +191,6 @@ BFC 目的是形成一个相对于外界完全独立的空间，让内部的子�
 ![''](@images/interview/css/css-bfc/image6.jpg)
 
 ### 小结
-
-
 
 可以看到上面几个案例，都体现了 BFC 实际就是页面一个独立的容器，里面的子元素不影响外面的元素
 

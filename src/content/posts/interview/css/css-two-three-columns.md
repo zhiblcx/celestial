@@ -3,7 +3,7 @@ title: 'css系列 —— 两三栏布局'
 description: '面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？'
 pubDate: '2024-09-11 16:00:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-two-three-columns.jpg'
+cardImage: '@images/interview/css/main/css-two-three-columns.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -46,25 +46,25 @@ selected: true
 
 ```html
 <style>
-     .box {
-      /* 添加BFC */
-      overflow: hidden;
-    }
-    .left {
-        float: left;
-        width: 200px;
-        background-color: gray;
-        height: 400px;
-    }
-    .right {
-        margin-left: 210px;
-        background-color: lightgray;
-        height: 200px;
-    }
+  .box {
+    /* 添加BFC */
+    overflow: hidden;
+  }
+  .left {
+    float: left;
+    width: 200px;
+    background-color: gray;
+    height: 400px;
+  }
+  .right {
+    margin-left: 210px;
+    background-color: lightgray;
+    height: 200px;
+  }
 </style>
 <div class="box">
-    <div class="left">左边</div>
-    <div class="right">右边</div>
+  <div class="left">左边</div>
+  <div class="right">右边</div>
 </div>
 ```
 
@@ -74,19 +74,19 @@ selected: true
 
 ```html
 <style>
-    .box{
-        display: flex;
-    }
-    .left {
-        width: 100px;
-    }
-    .right {
-        flex: 1;
-    }
+  .box {
+    display: flex;
+  }
+  .left {
+    width: 100px;
+  }
+  .right {
+    flex: 1;
+  }
 </style>
 <div class="box">
-    <div class="left">左边</div>
-    <div class="right">右边</div>
+  <div class="left">左边</div>
+  <div class="right">右边</div>
 </div>
 ```
 
@@ -115,35 +115,35 @@ flex 可以说是最好的方案了，代码少，使用简单
 
 ```html
 <style>
-    .wrap {
-        background: #eee;
-        overflow: hidden; <!-- 生成BFC，计算高度时考虑浮动的元素 -->
-        padding: 20px;
-        height: 200px;
-    }
-    .left {
-        width: 200px;
-        height: 200px;
-        float: left;
-        background: coral;
-    }
-    .right {
-        width: 120px;
-        height: 200px;
-        float: right;
-        background: lightblue;
-    }
-    .middle {
-        margin-left: 220px;
-        height: 200px;
-        background: lightpink;
-        margin-right: 140px;
-    }
+  .wrap {
+      background: #eee;
+      overflow: hidden; <!-- 生成BFC，计算高度时考虑浮动的元素 -->
+      padding: 20px;
+      height: 200px;
+  }
+  .left {
+      width: 200px;
+      height: 200px;
+      float: left;
+      background: coral;
+  }
+  .right {
+      width: 120px;
+      height: 200px;
+      float: right;
+      background: lightblue;
+  }
+  .middle {
+      margin-left: 220px;
+      height: 200px;
+      background: lightpink;
+      margin-right: 140px;
+  }
 </style>
 <div class="wrap">
-    <div class="left">左侧</div>
-    <div class="right">右侧</div>
-    <div class="middle">中间</div>
+  <div class="left">左侧</div>
+  <div class="right">右侧</div>
+  <div class="middle">中间</div>
 </div>
 ```
 
@@ -167,7 +167,7 @@ flex 可以说是最好的方案了，代码少，使用简单
   .container {
     position: relative;
   }
-  
+
   .left,
   .right,
   .main {
@@ -320,37 +320,37 @@ flex 可以说是最好的方案了，代码少，使用简单
 
 ```html
 <style type="text/css">
-    .wrap {
-        display: flex;
-        justify-content: space-between;
-    }
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .left,
-    .right,
-    .middle {
-        height: 100px;
-    }
+  .left,
+  .right,
+  .middle {
+    height: 100px;
+  }
 
-    .left {
-        width: 200px;
-        background: coral;
-    }
+  .left {
+    width: 200px;
+    background: coral;
+  }
 
-    .right {
-        width: 120px;
-        background: lightblue;
-    }
+  .right {
+    width: 120px;
+    background: lightblue;
+  }
 
-    .middle {
-        background: #555;
-        width: 100%;
-        margin: 0 20px;
-    }
+  .middle {
+    background: #555;
+    width: 100%;
+    margin: 0 20px;
+  }
 </style>
 <div class="wrap">
-    <div class="left">左侧</div>
-    <div class="middle">中间</div>
-    <div class="right">右侧</div>
+  <div class="left">左侧</div>
+  <div class="middle">中间</div>
+  <div class="right">右侧</div>
 </div>
 ```
 
@@ -371,34 +371,34 @@ flex 可以说是最好的方案了，代码少，使用简单
 
 ```html
 <style>
-    .wrap {
-        display: grid;
-        width: 100%;
-        grid-template-columns: 300px auto 300px;
-    }
+  .wrap {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 300px auto 300px;
+  }
 
-    .left,
-    .right,
-    .middle {
-        height: 100px;
-    }
+  .left,
+  .right,
+  .middle {
+    height: 100px;
+  }
 
-    .left {
-        background: coral;
-    }
+  .left {
+    background: coral;
+  }
 
-    .right {
-        background: lightblue;
-    }
+  .right {
+    background: lightblue;
+  }
 
-    .middle {
-        background: #555;
-    }
+  .middle {
+    background: #555;
+  }
 </style>
 <div class="wrap">
-    <div class="left">左侧</div>
-    <div class="middle">中间</div>
-    <div class="right">右侧</div>
+  <div class="left">左侧</div>
+  <div class="middle">中间</div>
+  <div class="right">右侧</div>
 </div>
 ```
 

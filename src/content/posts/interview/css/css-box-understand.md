@@ -3,7 +3,7 @@ title: 'css系列 —— 盒子模型的理解'
 description: '面试官：说说你对盒子模型的理解?'
 pubDate: '2024-09-09 20:23:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-box-understand.jpg'
+cardImage: '@images/interview/css/main/css-box-understand.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -38,9 +38,7 @@ selected: true
     padding: 20px;
   }
 </style>
-<div class="box">
-  盒子模型
-</div>
+<div class="box">盒子模型</div>
 ```
 
 当我们在浏览器查看元素时，却发现元素的大小变成了 **240px**
@@ -107,9 +105,7 @@ box-sizing: content-box|border-box|inherit:
     box-sizing: border-box;
   }
 </style>
-<div class="box">
-  盒子模型
-</div>
+<div class="box">盒子模型</div>
 ```
 
 这时候，就可以发现盒子的所占据的宽度为200px

@@ -1,11 +1,9 @@
 ---
-
-
 title: 'css系列 —— css选择器'
 description: '面试官：css选择器有哪些？优先级？哪些属性可以继承？'
 pubDate: '2024-09-09 20:23:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-selector.jpg'
+cardImage: '@images/interview/css/main/css-selector.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -22,15 +20,13 @@ CSS选择器是CSS规则的第一部分
 
 ```html
 <div id="box">
-    <div class="one">
-        <p class="one_1">
-        </p >
-        <p class="one_1">
-        </p >
-    </div>
-    <div class="two"></div>
-    <div class="two"></div>
-    <div class="two"></div>
+  <div class="one">
+    <p class="one_1"></p>
+    <p class="one_1"></p>
+  </div>
+  <div class="two"></div>
+  <div class="two"></div>
+  <div class="two"></div>
 </div>
 ```
 

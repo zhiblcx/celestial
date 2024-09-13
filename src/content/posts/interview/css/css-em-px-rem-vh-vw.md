@@ -3,7 +3,7 @@ title: 'css系列 —— em/px/rem/vh/vw区别'
 description: '面试官：说说em/px/rem/vh/vw区别?'
 pubDate: '2024-09-10 15:23:00'
 category: 'interview'
-cardImage: '@images/interview/css/css-em-px-rem-vh-vw.jpg'
+cardImage: '@images/interview/css/main/css-em-px-rem-vh-vw.jpg'
 tags: ['interview']
 selected: true
 ---
