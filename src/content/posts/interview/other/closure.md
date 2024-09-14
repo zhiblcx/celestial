@@ -3,7 +3,7 @@ title: '闭包'
 description: '深入理解闭包'
 pubDate: '2024-07-07 22:32:00'
 category: 'interview'
-cardImage: '@images/interview/closure.png'
+cardImage: '@images/interview/main/closure.png'
 tags: ['interview', 'javascript', 'closure']
 selected: true
 ---

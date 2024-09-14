@@ -3,7 +3,7 @@ title: '原型和原型链'
 description: '深入理解原型和原型链'
 pubDate: '2024-07-08 16:09:00'
 category: 'interview'
-cardImage: '@images/interview/prototype-prototypeChain.jpg'
+cardImage: '@images/interview/main/prototype-prototypeChain.jpg'
 tags: ['interview', 'javascript', 'prototype', 'prototype chain']
 selected: true
 ---

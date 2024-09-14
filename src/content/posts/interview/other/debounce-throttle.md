@@ -3,7 +3,7 @@ title: '防抖和节流'
 description: '深入理解防抖和节流'
 pubDate: '2024-07-08 11:35:00'
 category: 'interview'
-cardImage: '@images/interview/debounce-throttle.jpg'
+cardImage: '@images/interview/main/debounce-throttle.jpg'
 tags: ['interview', 'javascript', 'debounce', 'throttle']
 selected: true
 ---

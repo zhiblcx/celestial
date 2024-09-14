@@ -3,7 +3,7 @@ title: '事件循环'
 description: '理解事件循环'
 pubDate: '2024-07-22 23:40:00'
 category: 'interview'
-cardImage: '@images/interview/eventloop.jpg'
+cardImage: '@images/interview/main/eventloop.jpg'
 tags: ['interview', 'javascript', 'eventloop']
 selected: true
 ---

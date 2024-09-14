@@ -3,7 +3,7 @@ title: '笔记列表'
 description: '用原生 js 写一个笔记列表'
 pubDate: '2024-09-03 22:39:00'
 category: 'interview'
-cardImage: '@images/interview/notelist.jpg'
+cardImage: '@images/interview/main/notelist.jpg'
 tags: ['interview', 'javascript', 'ajax', 'http']
 selected: true
 ---

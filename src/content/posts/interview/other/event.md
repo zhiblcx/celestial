@@ -3,7 +3,7 @@ title: '事件冒泡，事件委托，事件捕获'
 description: '事件冒泡，事件委托，事件捕获'
 pubDate: '2024-08-06 12:14:00'
 category: 'interview'
-cardImage: '@images/interview/event.jpg'
+cardImage: '@images/interview/main/event.jpg'
 tags: ['interview', 'javascript', 'event']
 selected: true
 ---
