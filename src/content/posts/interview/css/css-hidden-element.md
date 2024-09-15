@@ -3,9 +3,10 @@ title: 'css系列 —— 隐藏页面元素'
 description: '面试官：css中，有哪些方式可以隐藏页面元素？区别?'
 pubDate: '2024-09-10 20:33:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-hidden-element.png'
+cardImage: '@images/interview/css/css-hidden-element/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、前言

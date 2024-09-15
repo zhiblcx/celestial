@@ -3,9 +3,10 @@ title: 'css系列 —— BFC'
 description: '面试官：谈谈你对BFC的理解？'
 pubDate: '2024-09-11 11:43:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-bfc.jpg'
+cardImage: '@images/interview/css/css-bfc/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

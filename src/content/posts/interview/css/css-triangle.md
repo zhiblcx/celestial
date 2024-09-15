@@ -3,9 +3,10 @@ title: 'css系列 —— 画三角形'
 description: '面试官：CSS如何画一个三角形？原理是什么？'
 pubDate: '2024-09-14 15:18:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-triangle.png'
+cardImage: '@images/interview/css/css-triangle/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、前言
@@ -24,12 +25,12 @@ selected: true
 
 ```html
 <style>
-    .border {
-        width: 50px;
-        height: 50px;
-        border: 2px solid;
-        border-color: #96ceb4 #ffeead #d9534f #ffad60;
-    }
+  .border {
+    width: 50px;
+    height: 50px;
+    border: 2px solid;
+    border-color: #96ceb4 #ffeead #d9534f #ffad60;
+  }
 </style>
 <div class="border"></div>
 ```
@@ -54,11 +55,11 @@ selected: true
 
 ```css
 .border {
-    width: 0;
-    height: 0;
-    border-style:solid;
-    border-width: 0 50px 50px;
-    border-color: transparent transparent #d9534f;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 50px 50px;
+  border-color: transparent transparent #d9534f;
 }
 ```
 
@@ -97,13 +98,13 @@ selected: true
 
 ```css
 .border:after {
-    content: '';
-    border-style: solid;
-    border-width: 0 40px 40px;
-    border-color: transparent transparent #96ceb4;
-    position: absolute;
-    top: 6px;
-    left: -40px;
+  content: '';
+  border-style: solid;
+  border-width: 0 40px 40px;
+  border-color: transparent transparent #96ceb4;
+  position: absolute;
+  top: 6px;
+  left: -40px;
 }
 ```
 
@@ -129,15 +130,15 @@ selected: true
 
 ```css
 .box {
-    /* 内部大小 */
-    width: 0px;
-    height: 0px;
-    /* 边框大小 只设置两条边*/
-    border-top: #4285f4 solid;
-    border-right: transparent solid;
-    border-width: 85px; 
-    /* 其他设置 */
-    margin: 50px;
+  /* 内部大小 */
+  width: 0px;
+  height: 0px;
+  /* 边框大小 只设置两条边*/
+  border-top: #4285f4 solid;
+  border-right: transparent solid;
+  border-width: 85px;
+  /* 其他设置 */
+  margin: 50px;
 }
 ```
 

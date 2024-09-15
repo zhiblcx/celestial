@@ -3,9 +3,10 @@ title: 'css系列 —— 设备像素、css像素、设备独立像素、dpr、p
 description: '面试官：说说设备像素、css像素、设备独立像素、dpr、ppi 之间的区别？'
 pubDate: '2024-09-10 19:43:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-pixel.png'
+cardImage: '@images/interview/css/css-pixel/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、背景

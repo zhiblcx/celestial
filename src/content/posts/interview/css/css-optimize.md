@@ -3,9 +3,10 @@ title: 'css系列 —— css 性能优化'
 description: '面试官：如果要做优化，CSS提高性能的方法有哪些？'
 pubDate: '2024-09-14 13:47:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-optimize.png'
+cardImage: '@images/interview/css/css-optimize/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、前言
@@ -47,23 +48,35 @@ selected: true
 
 ```js
 // 创建link标签
-const myCSS = document.createElement( "link" );
-myCSS.rel = "stylesheet";
-myCSS.href = "mystyles.css";
+const myCSS = document.createElement('link')
+myCSS.rel = 'stylesheet'
+myCSS.href = 'mystyles.css'
 // 插入到header的最后位置
-document.head.insertBefore( myCSS, document.head.childNodes[ document.head.childNodes.length - 1 ].nextSibling );
+document.head.insertBefore(
+  myCSS,
+  document.head.childNodes[document.head.childNodes.length - 1].nextSibling
+)
 ```
 
 - 设置 **link** 标签 **media** 属性为 **noexis**，浏览器会认为当前样式表不适用当前类型，会在不阻塞页面渲染的情况下再进行下载。加载完成后，将 **media** 的值设为 **screen** 或 **all**，从而让浏览器开始解析 CSS
 
 ```html
-<link rel="stylesheet" href="mystyles.css" media="noexist" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="mystyles.css"
+  media="noexist"
+  onload="this.media='all'"
+/>
 ```
 
 - 通过 **rel** 属性将 **link** 元素标记为 **alternate** 可选样式表，也能实现浏览器异步加载。同样别忘了加载完成之后，将 **rel** 设回 **stylesheet**
 
 ```html
-<link rel="alternate stylesheet" href="mystyles.css" onload="this.rel='stylesheet'">
+<link
+  rel="alternate stylesheet"
+  href="mystyles.css"
+  onload="this.rel='stylesheet'"
+/>
 ```
 
 ### 资源压缩

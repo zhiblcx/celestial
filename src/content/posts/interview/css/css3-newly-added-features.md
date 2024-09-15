@@ -3,9 +3,10 @@ title: 'css系列 —— CSS3 新增特性'
 description: '面试官：CSS3新增了哪些新特性？'
 pubDate: '2024-09-13 15:09:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css3-newly-added-features.png'
+cardImage: '@images/interview/css/css3-newly-added-features/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

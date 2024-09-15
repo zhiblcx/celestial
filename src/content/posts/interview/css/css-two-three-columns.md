@@ -3,9 +3,10 @@ title: 'css系列 —— 两三栏布局'
 description: '面试官：如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？'
 pubDate: '2024-09-11 16:00:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-two-three-columns.jpg'
+cardImage: '@images/interview/css/css-two-three-columns/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、背景

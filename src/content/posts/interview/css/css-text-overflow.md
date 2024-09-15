@@ -3,9 +3,10 @@ title: 'css系列 —— 单行／多行文本溢出'
 description: '面试官：如何实现单行／多行文本溢出的省略样式？'
 pubDate: '2024-09-14 14:03:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-text-overflow.png'
+cardImage: '@images/interview/css/css-text-overflow/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、前言

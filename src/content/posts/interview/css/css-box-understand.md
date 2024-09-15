@@ -3,9 +3,10 @@ title: 'css系列 —— 盒子模型的理解'
 description: '面试官：说说你对盒子模型的理解?'
 pubDate: '2024-09-09 20:23:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-box-understand.jpg'
+cardImage: '@images/interview/css/css-box-understand/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

@@ -3,9 +3,10 @@ title: 'css系列 —— 响应式设计'
 description: '面试官：什么是响应式设计？响应式设计的基本原理是什么？如何做？'
 pubDate: '2024-09-14 13:30:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-responsive-layout.png'
+cardImage: '@images/interview/css/css-responsive-layout/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

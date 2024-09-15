@@ -3,9 +3,10 @@ title: 'css系列 —— CSS预处理器'
 description: '面试官：说说对Css预编语言的理解？有哪些区别?'
 pubDate: '2024-09-14 15:59:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-preprocessor.png'
+cardImage: '@images/interview/css/css-preprocessor/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

@@ -3,9 +3,10 @@ title: 'css系列 —— grid 网格布局'
 description: '面试官：介绍一下grid网格布局'
 pubDate: '2024-09-12 11:12:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-grid.jpg'
+cardImage: '@images/interview/css/css-grid/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

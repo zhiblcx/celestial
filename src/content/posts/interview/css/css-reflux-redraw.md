@@ -3,9 +3,10 @@ title: 'css系列 —— 回流重绘'
 description: '面试官：怎么理解回流跟重绘？什么场景下会触发？'
 pubDate: '2024-09-13 16:08:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-reflux-redraw.png'
+cardImage: '@images/interview/css/css-reflux-redraw/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么
@@ -93,9 +94,9 @@ selected: true
 
 ```js
 const el = document.getElementById('el')
-for(let i=0;i<10;i++) {
-    el.style.top  = el.offsetTop  + 10 + "px";
-    el.style.left = el.offsetLeft + 10 + "px";
+for (let i = 0; i < 10; i++) {
+  el.style.top = `${el.offsetTop + 10}px`
+  el.style.left = `${el.offsetLeft + 10}px`
 }
 ```
 
@@ -104,17 +105,18 @@ for(let i=0;i<10;i++) {
 ```js
 // 缓存offsetLeft与offsetTop的值
 const el = document.getElementById('el')
-let offLeft = el.offsetLeft, offTop = el.offsetTop
+let offLeft = el.offsetLeft
+let offTop = el.offsetTop
 
 // 在JS层面进行计算
-for(let i=0;i<10;i++) {
+for (let i = 0; i < 10; i++) {
   offLeft += 10
-  offTop  += 10
+  offTop += 10
 }
 
 // 一次性将计算结果应用到DOM上
-el.style.left = offLeft + "px"
-el.style.top = offTop  + "px"
+el.style.left = `${offLeft}px`
+el.style.top = `${offTop}px`
 ```
 
 我们还可避免改变样式，使用类名去合并样式
@@ -131,16 +133,16 @@ container.style.color = 'red'
 
 ```html
 <style>
-    .basic_style {
-        width: 100px;
-        height: 200px;
-        border: 10px solid red;
-        color: red;
-    }
+  .basic_style {
+    width: 100px;
+    height: 200px;
+    border: 10px solid red;
+    color: red;
+  }
 </style>
 <script>
-    const container = document.getElementById('container')
-    container.classList.add('basic_style')
+  const container = document.getElementById('container')
+  container.classList.add('basic_style')
 </script>
 ```
 

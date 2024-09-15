@@ -3,9 +3,10 @@ title: 'css系列 —— css选择器'
 description: '面试官：css选择器有哪些？优先级？哪些属性可以继承？'
 pubDate: '2024-09-09 20:23:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-selector.jpg'
+cardImage: '@images/interview/css/css-selector/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、选择器

@@ -3,9 +3,10 @@ title: 'css系列 —— 元素水平垂直居中的方法'
 description: '面试官：元素水平垂直居中的方法有哪些？如果元素不定宽高呢？'
 pubDate: '2024-09-11 15:09:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-level-vertical-center.jpg'
+cardImage: '@images/interview/css/css-level-vertical-center/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、背景

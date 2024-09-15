@@ -3,9 +3,10 @@ title: 'css系列 —— flexbox 弹性布局'
 description: '面试官：说说 flexbox（弹性盒布局模型）,以及适用场景？'
 pubDate: '2024-09-12 11:43:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-flexbox.jpg'
+cardImage: '@images/interview/css/css-flexbox/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

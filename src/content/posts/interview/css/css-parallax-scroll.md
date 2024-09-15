@@ -3,9 +3,10 @@ title: 'css系列 —— 视差滚动'
 description: '面试官：如何使用css完成视差滚动效果?'
 pubDate: '2024-09-14 14:47:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-parallax-scroll.png'
+cardImage: '@images/interview/css/css-parallax-scroll/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么

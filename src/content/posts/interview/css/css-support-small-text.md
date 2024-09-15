@@ -3,9 +3,10 @@ title: 'css系列 —— 支持小于12px文字'
 description: '面试官：让Chrome支持小于12px 的文字方式有哪些？区别？'
 pubDate: '2024-09-14 15:30:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css-support-small-text.png'
+cardImage: '@images/interview/css/css-support-small-text/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、背景

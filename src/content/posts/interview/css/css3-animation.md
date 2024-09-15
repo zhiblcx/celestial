@@ -3,9 +3,10 @@ title: 'css系列 —— css3 动画'
 description: '面试官：css3动画有哪些？'
 pubDate: '2024-09-13 15:51:00'
 category: 'interview'
-cardImage: '@images/interview/css/main/css3-animation.png'
+cardImage: '@images/interview/css/css3-animation/main.png'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、是什么
