@@ -22,7 +22,7 @@ selected: true
 - 标签导航在接近手持终端设备时改变为经典的抽屉式导航
 - 网站的布局会根据视口来调整模块的大小和位置
 
-!['']('@images/interview/css/css-responsive-layout/image.png')
+![''](@images/interview/css/css-responsive-layout/image.png)
 
 ## 二、实现方式
 
