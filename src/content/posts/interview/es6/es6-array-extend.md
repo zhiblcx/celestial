@@ -3,7 +3,7 @@ title: 'es6系列 —— ES6中数组新增了哪些扩展'
 description: 'ES6中数组新增了哪些扩展'
 pubDate: '2024-09-07 07:00:00'
 category: 'interview'
-cardImage: '@images/interview/es6/es6-array-extend.png'
+cardImage: '@images/interview/es6/main/es6-array-extend.png'
 tags: ['interview', 'es6']
 selected: true
 ---
@@ -13,9 +13,9 @@ selected: true
 ES6 通过扩展运算符 **...** ，将一个数组转为逗号分割的参数序列
 
 ```js
-console.log(...[1,2,3]) // 1,2,3
+console.log(...[1, 2, 3]) // 1,2,3
 
-console.log(1,...[2,3,4],5) // 1,2,3,4,5
+console.log(1, ...[2, 3, 4], 5) // 1,2,3,4,5
 
 console.log([...document.querySelectorAll('div')]) // [div,div,div]
 ```
@@ -39,7 +39,7 @@ console.log(add(...arr)) // 3
 可以将某些数据结构转为数组
 
 ```js
-[...document.querySelectorAll('div')]
+;[...document.querySelectorAll('div')]
 ```
 
 能够更简单的实现数组的复制
@@ -77,8 +77,8 @@ const arr = [
   [1000, 2000],
   {
     name: 'nicole',
-    age: 23
-  }
+    age: 23,
+  },
 ]
 
 const arr2 = [...arr]
@@ -130,13 +130,13 @@ console.log([...'hello']) // [ 'h', 'e', 'l', 'l', 'o' ]
 定义了遍历器（Iterator）接口的对象，都可以用扩展运算符转换为真正的数组
 
 ```js
-let nodeList = document.querySelectorAll('div');
-let array = [...nodeList];
+const nodeList = document.querySelectorAll('div')
+const array = [...nodeList]
 
 const map = new Map([
   [1, 'one'],
   [2, 'two'],
-  [3, 'three']
+  [3, 'three'],
 ])
 
 console.log(map.keys()) // [Map Iterator] { 1, 2, 3 }
@@ -148,10 +148,10 @@ console.log([...map.keys()]) // [ 1, 2, 3 ]
 ```js
 const obj = {
   a: 1,
-  b: 2
+  b: 2,
 }
 
-let arr = [...obj] // TypeError: obj is not iterable
+const arr = [...obj] // TypeError: obj is not iterable
 ```
 
 ## 二、构造函数新增的方法
@@ -170,7 +170,7 @@ const arrayLike = {
   0: 'a',
   1: 'b',
   2: 'c',
-  length: 3
+  length: 3,
 }
 
 console.log(Array.from(arrayLike)) // [ 'a', 'b', 'c' ]
@@ -181,7 +181,7 @@ console.log(Array.from(arrayLike)) // [ 'a', 'b', 'c' ]
 ```js
 const arr = [1, 2, 3]
 
-const arr2 = Array.from(arr, x => x * x)  // [ 1, 4, 9 ]
+const arr2 = Array.from(arr, (x) => x * x) // [ 1, 4, 9 ]
 ```
 
 ### Array.of()
@@ -189,7 +189,7 @@ const arr2 = Array.from(arr, x => x * x)  // [ 1, 4, 9 ]
 用于将一组值，转换为数组
 
 ```js
-Array.of(1,2,3) // [1,2,3]
+Array.of(1, 2, 3) // [1,2,3]
 ```
 
 没有参数的时候，返回一个空数组
@@ -233,18 +233,18 @@ console.log([1, 2, 3, 4, 5].copyWithin(2, 3))
 
 ### find()、findIndex()
 
-**find() **用于找出第一个符合条件的数组成员
+**find()**用于找出第一个符合条件的数组成员
 
 参数是一个回调函数，接受三个参数依次为当前值、当前的位置和原数组
 
 ```js
-[1, 5, 10, 15].find((value, index, arr) => value > 9) // 10
+;[1, 5, 10, 15].find((value, index, arr) => value > 9) // 10
 ```
 
 **findIndex()** 返回第一个符合条件的数组成员的位置，如果所有数组成员都不符合条件，则返回 **-1**
 
 ```js
- [1, 5, 10, 15].findIndex((value, index, arr) => value > 9) // 2
+;[1, 5, 10, 15].findIndex((value, index, arr) => value > 9) // 2
 ```
 
 这两个方法都可以接受第二个参数，用来绑定回调函数的 **this** 对象
@@ -256,7 +256,7 @@ function f(v) {
 
 const person = {
   name: 'nicole',
-  age: 20
+  age: 20,
 }
 
 console.log([18, 20, 28, 46].find(f, person)) // 28
@@ -267,9 +267,9 @@ console.log([18, 20, 28, 46].find(f, person)) // 28
 使用给定值，填充一个数组
 
 ```js
-[1, 2, 3].fill(4); // [4, 4, 4]
+;[1, 2, 3].fill(4) // [4, 4, 4]
 
-new Array(3).fill(8) // [ 8, 8, 8 ]
+Array.from({ length: 3 }).fill(8) // [ 8, 8, 8 ]
 ```
 
 还可以接收第二个和第三个参数，用于指定填充的起始位置和结束位置
@@ -282,26 +282,22 @@ console.log(arr.fill(7, 2, 4)) // [ 1, 2, 7, 7, 5 ]
 
 如果填充的是对象，则是浅拷贝
 
-###  entries()，keys()，values()
+### entries()，keys()，values()
 
 **keys()** 是对键名的遍历、**value()** 是对键值的遍历、**entries()** 是对键值对的遍历
 
 ```js
-for (let index of ['a', 'b'].keys()) {
-  console.log(index)
-}
+for (const index of ['a', 'b'].keys()) console.log(index)
+
 // 0
 // 1
 
-for (let elem of ['a', 'b'].values()) {
-  console.log(elem)
-}
+for (const elem of ['a', 'b'].values()) console.log(elem)
+
 // a
 // b
 
-for (let [index, elem] of ['a', 'b'].entries()) {
-  console.log(index, elem)
-}
+for (const [index, elem] of ['a', 'b'].entries()) console.log(index, elem)
 
 // 0 a
 // 1 b
@@ -316,7 +312,7 @@ console.log([1, 2, 3].includes(4)) // false
 
 console.log([1, 2, 3].includes(1)) // true
 
-console.log([1, 2, 3, NaN].includes(NaN)) // true
+console.log([1, 2, 3, Number.NaN].includes(Number.NaN)) // true
 ```
 
 方法的第二个参数表示搜索的起始位置，默认为 **0**
@@ -348,7 +344,7 @@ console.log([1, 2, 3, [4, [5, 6]]].flat(2)) // [1,2,3,4,5,6]
 
 ```js
 // 相当于[[1,2],[2,4],[3,6]].flat()
-console.log([1, 2, 3].flatMap(x => [x, x * 2]))
+console.log([1, 2, 3].flatMap((x) => [x, x * 2]))
 // [ 1, 2, 2, 4, 3, 6 ]
 ```
 
@@ -361,9 +357,9 @@ function f(x) {
 
 const person = {
   name: 'nicole',
-  age: 20
+  age: 20,
 }
-console.log([1, 2, 3].flatMap(x => [x, x * this.age], person))
+console.log([1, 2, 3].flatMap((x) => [x, x * this.age], person))
 // [ 1, NaN, 2, NaN, 3, NaN ]
 
 console.log([1, 2, 3].flatMap(f, person))
@@ -386,9 +382,8 @@ ES6 则是明确将空位转为 **undefined** ，包括 **Array.from**、**扩�
 const arr = ['peach', 'straw', 'apple', 'spork']
 
 arr.sort((s1, s2) => {
-  if (s1[0] < s2[0]) {
-    return -1
-  }
+  if (s1[0] < s2[0]) return -1
+
   return 1
 })
 // [ 'apple', 'peach', 'straw', 'spork' ]

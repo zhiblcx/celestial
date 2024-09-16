@@ -3,7 +3,7 @@ title: 'javascript系列 —— 对作用域链的理解'
 description: '面试官：说说你对作用域链的理解'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-scope-chain.jpg'
+cardImage: '@images/interview/javascript/main/js-scope-chain.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -121,18 +121,18 @@ bar()
 下面代码演示下：
 
 ```js
-var sex = '男';
+const sex = '男'
 function person() {
-    var name = '张三';
-    function student() {
-        var age = 18;
-        console.log(name); // 张三
-        console.log(sex); // 男 
-    }
-    student();
-    console.log(age); // Uncaught ReferenceError: age is not defined
+  const name = '张三'
+  function student() {
+    const age = 18
+    console.log(name) // 张三
+    console.log(sex) // 男
+  }
+  student()
+  console.log(age) // Uncaught ReferenceError: age is not defined
 }
-person();
+person()
 ```
 
 上述代码主要主要做了以下工作：

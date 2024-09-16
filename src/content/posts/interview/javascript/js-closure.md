@@ -3,7 +3,7 @@ title: 'javascript系列 —— 对闭包的理解、闭包的使用场景'
 description: '面试官：说说你对闭包的理解？闭包使用场景'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-closure.jpg'
+cardImage: '@images/interview/javascript/main/js-closure.jpg'
 tags: ['interview']
 selected: true
 ---

@@ -3,7 +3,7 @@ title: 'es6系列 —— var、let、const 的区别'
 description: 'var、let、const 的区别'
 pubDate: '2024-09-06 20:11:00'
 category: 'interview'
-cardImage: '@images/interview/es6/es6-var、let、const.png'
+cardImage: '@images/interview/es6/main/es6-var、let、const.png'
 tags: ['interview', 'es6']
 selected: true
 ---

@@ -3,7 +3,7 @@ title: 'javascript系列 —— JavaScript 中的类型转换机制'
 description: '面试官：谈谈 JavaScript 中的类型转换机制？'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-type-transform-mechanism.jpg'
+cardImage: '@images/interview/javascript/main/js-type-transform-mechanism.jpg'
 tags: ['interview']
 selected: true
 ---

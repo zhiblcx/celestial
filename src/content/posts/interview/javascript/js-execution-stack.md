@@ -3,7 +3,7 @@ title: 'javascript系列 —— JavaScript中执行上下文和执行栈是什�
 description: '面试官：JavaScript中执行上下文和执行栈是什么？'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-execution-stack.jpg'
+cardImage: '@images/interview/javascript/main/js-execution-stack.jpg'
 tags: ['interview']
 selected: true
 ---

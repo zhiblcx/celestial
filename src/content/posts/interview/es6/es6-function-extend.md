@@ -3,7 +3,7 @@ title: 'es6系列 —— 函数新增了哪些扩展'
 description: '函数新增了哪些扩展'
 pubDate: '2024-09-07 10:21:00'
 category: 'interview'
-cardImage: '@images/interview/es6/es6-function-extend.png'
+cardImage: '@images/interview/es6/main/es6-function-extend.png'
 tags: ['interview', 'es6']
 selected: true
 ---

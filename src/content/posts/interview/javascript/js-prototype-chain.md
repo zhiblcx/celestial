@@ -3,7 +3,7 @@ title: 'javascript系列 —— JavaScript原型，原型链特点'
 description: '面试官：JavaScript原型，原型链 ? 有什么特点？'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-prototype-chain.jpg'
+cardImage: '@images/interview/javascript/main/js-prototype-chain.jpg'
 tags: ['interview']
 selected: true
 ---

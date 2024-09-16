@@ -3,7 +3,7 @@ title: 'javascript系列 —— 深拷贝浅拷贝的区别、实现深拷贝'
 description: '面试官：深拷贝浅拷贝的区别？如何实现一个深拷贝？'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-replica-difference.jpg'
+cardImage: '@images/interview/javascript/main/js-replica-difference.jpg'
 tags: ['interview']
 selected: true
 ---
@@ -36,6 +36,7 @@ function shallowClone(obj) {
   for (const prop in obj) {
     if (obj.hasOwnProperty(prop)) newObj[prop] = obj[prop]
   }
+
   return newObj
 }
 ```

@@ -3,7 +3,7 @@ title: 'javascript系列 —— Javascript如何实现继承？'
 description: '面试官：Javascript如何实现继承？'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-extend.jpg'
+cardImage: '@images/interview/javascript/main/js-extend.jpg'
 tags: ['interview']
 selected: true
 ---

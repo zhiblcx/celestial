@@ -3,7 +3,7 @@ title: 'es6系列 —— 对象新增了哪些扩展'
 description: '对象新增了哪些扩展'
 pubDate: '2024-09-07 15:23:00'
 category: 'interview'
-cardImage: '@images/interview/es6/es6-object-extend.png'
+cardImage: '@images/interview/es6/main/es6-object-extend.png'
 tags: ['interview', 'es6']
 selected: true
 ---

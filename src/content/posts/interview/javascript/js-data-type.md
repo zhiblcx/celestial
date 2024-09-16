@@ -3,7 +3,7 @@ title: 'javascript系列 —— JavaScript中的数据类型以及存储上的�
 description: '面试官：说说JavaScript中的数据类型？存储上的差别？'
 pubDate: '2024-09-07 19:05:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-data-type.jpg'
+cardImage: '@images/interview/javascript/main/js-data-type.jpg'
 tags: ['interview', 'vue']
 selected: true
 ---
