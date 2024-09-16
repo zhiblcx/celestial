@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-string.common.jpg'
 tags: ['interview', 'vue']
 selected: true
+show: false
 ---
 
 ## 一、操作方法

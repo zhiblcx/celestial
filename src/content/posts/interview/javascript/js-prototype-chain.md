@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-prototype-chain.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、原型

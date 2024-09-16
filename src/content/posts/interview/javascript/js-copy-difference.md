@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-replica-difference.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、数据类型存储

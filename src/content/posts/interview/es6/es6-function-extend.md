@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/es6/main/es6-function-extend.png'
 tags: ['interview', 'es6']
 selected: true
+show: false
 ---
 
 ## 一、参数

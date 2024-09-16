@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-type-transform-mechanism.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、概述

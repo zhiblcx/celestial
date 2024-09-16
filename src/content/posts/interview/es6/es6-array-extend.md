@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/es6/main/es6-array-extend.png'
 tags: ['interview', 'es6']
 selected: true
+show: false
 ---
 
 ## 一、扩展运算符的应用

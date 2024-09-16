@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/es6/main/es6-var、let、const.png'
 tags: ['interview', 'es6']
 selected: true
+show: false
 ---
 
 ## var

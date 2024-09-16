@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-this-object-understand.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、定义

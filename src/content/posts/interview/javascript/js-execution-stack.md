@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-execution-stack.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、执行上下文

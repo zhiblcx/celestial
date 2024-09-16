@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/javascript/main/js-scope-chain.jpg'
 tags: ['interview']
 selected: true
+show: false
 ---
 
 ## 一、作用域
