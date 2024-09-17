@@ -3,7 +3,7 @@ title: 'javascript系列 —— == 和 ===区别，分别在什么情况使用'
 description: '面试官：== 和 ===区别，分别在什么情况使用'
 pubDate: '2024-09-08 18:28:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/js-two-equal-three-equal.jpg'
+cardImage: '@images/interview/javascript/main/js-two-equal-three-equal.jpg'
 tags: ['interview']
 selected: true
 show: false
