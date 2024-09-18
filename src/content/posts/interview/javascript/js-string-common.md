@@ -4,7 +4,7 @@ description: '面试官：JavaScript字符串的常用方法有哪些？'
 pubDate: '2024-09-07 18:28:00'
 category: 'interview'
 cardImage: '@images/interview/javascript/main/js-string.common.jpg'
-tags: ['interview', 'vue']
+tags: ['interview']
 selected: true
 show: false
 ---
