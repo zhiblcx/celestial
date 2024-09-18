@@ -4,7 +4,7 @@ description: '面试官：说说JavaScript中的数据类型？存储上的差�
 pubDate: '2024-09-07 19:05:00'
 category: 'interview'
 cardImage: '@images/interview/javascript/main/js-data-type.jpg'
-tags: ['interview', 'vue']
+tags: ['interview']
 selected: true
 show: false
 ---
