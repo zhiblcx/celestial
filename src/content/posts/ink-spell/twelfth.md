@@ -3,7 +3,7 @@ title: '使用异常过滤器处理异常'
 description: 'NestJs + Prisma 使用异常过滤器处理异常'
 pubDate: '2024-07-30 10:26:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/twelfth.jpg'
+cardImage: '@images/ink-spell/main/twelfth.jpg'
 tags: ['ink-spell', 'prisma', 'error']
 selected: false
 ---

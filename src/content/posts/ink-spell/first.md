@@ -4,7 +4,7 @@ description: '解决导入不重复书籍'
 pubDate: '2024-07-18 09:00:00'
 updateDate: '2024-08-09 14:45:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/first.jpg'
+cardImage: '@images/ink-spell/main/first.jpg'
 tags: ['ink-spell', 'spark-md5']
 selected: false
 ---
@@ -30,10 +30,10 @@ selected: false
 
 ```ts
 document.getElementById('file').addEventListener('change', function () {
-  const blobSlice
-    = File.prototype.slice
-    || File.prototype.mozSlice
-    || File.prototype.webkitSlice
+  const blobSlice =
+    File.prototype.slice ||
+    File.prototype.mozSlice ||
+    File.prototype.webkitSlice
   const file = this.files[0]
   const chunkSize = 2097152 // Read in chunks of 2MB
   const chunks = Math.ceil(file.size / chunkSize)
@@ -48,8 +48,7 @@ document.getElementById('file').addEventListener('change', function () {
 
     if (currentChunk < chunks) {
       loadNext()
-    }
-    else {
+    } else {
       console.log('finished loading')
       console.info('computed hash', spark.end()) // Compute hash
     }

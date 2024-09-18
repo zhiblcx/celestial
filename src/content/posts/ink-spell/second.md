@@ -3,7 +3,7 @@ title: '浏览器滚动条样式'
 description: '浏览器滚动条样式修改'
 pubDate: '2024-07-18 12:06:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/second.png'
+cardImage: '@images/ink-spell/main/second.png'
 tags: ['ink-spell', 'scroll']
 selected: false
 ---

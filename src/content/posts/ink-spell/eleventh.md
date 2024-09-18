@@ -3,7 +3,7 @@ title: 'vite 获取环境变量'
 description: '通过 process.env 获取环境变量'
 pubDate: '2024-07-27 15:30:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/eleventh.jpg'
+cardImage: '@images/ink-spell/main/eleventh.jpg'
 tags: ['ink-spell', 'vite']
 selected: false
 ---

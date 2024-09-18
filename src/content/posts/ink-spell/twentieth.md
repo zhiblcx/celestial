@@ -3,7 +3,7 @@ title: '使用 nginx 部署前端'
 description: '使用 nginx 部署 react'
 pubDate: '2024-08-31 20:00:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/twentieth.jpg'
+cardImage: '@images/ink-spell/main/twentieth.jpg'
 tags: ['ink-spell', 'react']
 selected: false
 ---

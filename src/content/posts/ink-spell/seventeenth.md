@@ -3,7 +3,7 @@ title: 'socket.io'
 description: 'nest.js 中使用 socket.io'
 pubDate: '2024-08-12 10:14:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/seventeenth.jpg'
+cardImage: '@images/ink-spell/main/seventeenth.jpg'
 tags: ['ink-spell', 'socket.io']
 selected: false
 ---

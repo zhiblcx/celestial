@@ -3,7 +3,7 @@ title: 'prisma 不能读取 .env.local'
 description: 'prisma不能读取除了.env以外的环境配置'
 pubDate: '2024-07-24 23:30:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/eighth.jpg'
+cardImage: '@images/ink-spell/main/eighth.jpg'
 tags: ['ink-spell', 'prisma']
 selected: false
 ---

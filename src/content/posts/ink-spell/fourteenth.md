@@ -3,7 +3,7 @@ title: '启动默认只能访问localhost解决方法'
 description: '启动默认只能访问localhost解决方法'
 pubDate: '2024-07-31 10:11:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/fourteenth.jpg'
+cardImage: '@images/ink-spell/main/fourteenth.jpg'
 tags: ['ink-spell']
 selected: false
 ---

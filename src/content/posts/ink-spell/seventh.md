@@ -3,7 +3,7 @@ title: '解决CRLF与LF冲突'
 description: 'vscode解决windows换行CRLF与LF冲突'
 pubDate: '2024-07-24 21:53:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/seventh.jpg'
+cardImage: '@images/ink-spell/main/seventh.jpg'
 tags: ['ink-spell', 'LF', 'CRLF']
 selected: false
 ---

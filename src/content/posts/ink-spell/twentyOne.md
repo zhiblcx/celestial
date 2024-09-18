@@ -3,7 +3,7 @@ title: '文件下载'
 description: 'nest传给前端文件，前端接收文件下载 '
 pubDate: '2024-09-06 18:13:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/twentyOne.jpg'
+cardImage: '@images/ink-spell/main/twentyOne.jpg'
 tags: ['ink-spell', 'download']
 selected: false
 ---

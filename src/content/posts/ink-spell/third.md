@@ -3,7 +3,7 @@ title: 'checkbox'
 description: '书籍的单选、多选、删除，添加到其他书架'
 pubDate: '2024-07-18 21:00:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/third.png'
+cardImage: '@images/ink-spell/main/third.png'
 tags: ['ink-spell', 'checkbox']
 selected: false
 ---

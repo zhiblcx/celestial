@@ -3,7 +3,7 @@ title: 'dnd-kit 实现移动书架'
 description: '利用 dnd-kit 实现用户移动书架'
 pubDate: '2024-08-11 20:11:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/sixteenth.jpg'
+cardImage: '@images/ink-spell/main/sixteenth.jpg'
 tags: ['ink-spell', 'dnd-kit']
 selected: false
 ---

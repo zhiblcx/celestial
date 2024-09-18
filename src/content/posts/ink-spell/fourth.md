@@ -3,7 +3,7 @@ title: '我的书架'
 description: '用户自己添加书架导航，并且可以把书添加到添加的书架中'
 pubDate: '2024-07-20 12:44:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/fourth.png'
+cardImage: '@images/ink-spell/main/fourth.png'
 tags: ['ink-spell']
 selected: false
 ---
@@ -16,17 +16,17 @@ selected: false
 
 **字典类型表**
 
-| id   | type   | type_name | create_timer       |
-| :--- | :----- | :-------- | :----------------- |
-| 1    | gender | 性别      | 2024-7-20 12:49:00 |
-| 2    | shelf  | 书架      | 2024-7-20 12:49:00 |
+| id  | type   | type_name | create_timer       |
+| :-- | :----- | :-------- | :----------------- |
+| 1   | gender | 性别      | 2024-7-20 12:49:00 |
+| 2   | shelf  | 书架      | 2024-7-20 12:49:00 |
 
 **字典内容表**
 
-| id   | label | value       | dic_id | create_timer       |
-| :--- | :---- | :---------- | :----- | :----------------- |
-| 1    | 男    | male        | 1      | 2024-7-20 12:49:00 |
-| 2    | 女    | female      | 1      | 2024-7-20 12:49:00 |
-| 3    | 修仙  | cultivation | 2      | 2024-7-20 12:49:00 |
+| id  | label | value       | dic_id | create_timer       |
+| :-- | :---- | :---------- | :----- | :----------------- |
+| 1   | 男    | male        | 1      | 2024-7-20 12:49:00 |
+| 2   | 女    | female      | 1      | 2024-7-20 12:49:00 |
+| 3   | 修仙  | cultivation | 2      | 2024-7-20 12:49:00 |
 
 用户自己添加书架，也就是给字典内容表添加一行记录，因为这里的用户是多个，每个人的用户的书架都不同，于是给每个用户派发一个书架，也就是每个用户都有一个外键 dic_id，然后就可以找到字典内容表，也就是自己添加的书架了。

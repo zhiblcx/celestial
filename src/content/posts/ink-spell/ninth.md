@@ -3,7 +3,7 @@ title: 'nest.js 静态服务'
 description: 'nest.js 读取静态资源'
 pubDate: '2024-07-25 12:37:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/ninth.jpg'
+cardImage: '@images/ink-spell/main/ninth.jpg'
 tags: ['ink-spell', 'static']
 selected: false
 ---

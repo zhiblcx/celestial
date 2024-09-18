@@ -3,7 +3,7 @@ title: '配置返回格式swagger'
 description: 'NestJs 配置返回格式swagger'
 pubDate: '2024-07-30 18:33:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/thirteenth.jpg'
+cardImage: '@images/ink-spell/main/thirteenth.jpg'
 tags: ['ink-spell', 'NestJs', 'swagger']
 selected: false
 ---

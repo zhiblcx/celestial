@@ -3,7 +3,7 @@ title: 'vscode 拼写错误'
 description: '解决 vscode 里插件 Code Spell Checker 拼写错误'
 pubDate: '2024-08-19 08:56:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/eighteenth.jpg'
+cardImage: '@images/ink-spell/main/eighteenth.jpg'
 tags: ['ink-spell', 'Code Spell Checker']
 selected: false
 ---
