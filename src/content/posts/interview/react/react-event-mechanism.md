@@ -1,7 +1,7 @@
 ---
 title: 'React 事件机制'
 description: '面试官：说说React的事件机制？'
-pubDate: '2024-09-22 20:41:00'
+pubDate: '2024-09-23 07:16:00'
 category: 'interview'
 cardImage: '@images/interview/react/main/react-event-mechanism.png'
 tags: ['interview', 'react']
@@ -27,7 +27,7 @@ const button = <button onClick={handleClick}>按钮</button>
 如果想要获得原生 **DOM** 事件，可以通过 **e.nativeEvent** 属性获取
 
 ```js
-const handleClick = (e) => console.log(e.nativeEvent);;
+const handleClick = (e) => console.log(e.nativeEvent)
 const button = <button onClick={handleClick}>按钮</button>
 ```
 
@@ -37,7 +37,7 @@ const button = <button onClick={handleClick}>按钮</button>
 
 ```jsx
 // 原生事件绑定方式
-<button onclick="handleClick()">按钮命名</button>
+;<button onclick="handleClick()">按钮命名</button>
 
 // React 合成事件绑定方式
 const button = <button onClick={handleClick}>按钮命名</button>
@@ -47,7 +47,7 @@ const button = <button onClick={handleClick}>按钮命名</button>
 
 ```jsx
 // 原生事件 事件处理函数写法
-<button onclick="handleClick()">按钮命名</button>
+;<button onclick="handleClick()">按钮命名</button>
 
 // React 合成事件 事件处理函数写法
 const button = <button onClick={handleClick}>按钮命名</button>
@@ -64,32 +64,31 @@ const button = <button onClick={handleClick}>按钮命名</button>
 关于 **React** 合成事件与原生事件执行顺序，可以看看下面一个例子：
 
 ```jsx
-import  React  from 'react';
-class App extends React.Component{
-
+import React from 'react'
+class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.parentRef = React.createRef();
-    this.childRef = React.createRef();
+    super(props)
+    this.parentRef = React.createRef()
+    this.childRef = React.createRef()
   }
   componentDidMount() {
-    console.log("React componentDidMount！");
-    this.parentRef.current?.addEventListener("click", () => {
-      console.log("原生事件：父元素 DOM 事件监听！");
-    });
-    this.childRef.current?.addEventListener("click", () => {
-      console.log("原生事件：子元素 DOM 事件监听！");
-    });
-    document.addEventListener("click", (e) => {
-      console.log("原生事件：document DOM 事件监听！");
-    });
+    console.log('React componentDidMount！')
+    this.parentRef.current?.addEventListener('click', () => {
+      console.log('原生事件：父元素 DOM 事件监听！')
+    })
+    this.childRef.current?.addEventListener('click', () => {
+      console.log('原生事件：子元素 DOM 事件监听！')
+    })
+    document.addEventListener('click', (e) => {
+      console.log('原生事件：document DOM 事件监听！')
+    })
   }
   parentClickFun = () => {
-    console.log("React 事件：父元素事件监听！");
-  };
+    console.log('React 事件：父元素事件监听！')
+  }
   childClickFun = () => {
-    console.log("React 事件：子元素事件监听！");
-  };
+    console.log('React 事件：子元素事件监听！')
+  }
   render() {
     return (
       <div ref={this.parentRef} onClick={this.parentClickFun}>
@@ -97,19 +96,19 @@ class App extends React.Component{
           分析事件执行顺序
         </div>
       </div>
-    );
+    )
   }
 }
-export default App;
+export default App
 ```
 
 输出顺序为：
 
 ```tex
-原生事件：子元素 DOM 事件监听！ 
-原生事件：父元素 DOM 事件监听！ 
-React 事件：子元素事件监听！ 
-React 事件：父元素事件监听！ 
+原生事件：子元素 DOM 事件监听！
+原生事件：父元素 DOM 事件监听！
+React 事件：子元素事件监听！
+React 事件：父元素事件监听！
 原生事件：document DOM 事件监听！
 ```
 
