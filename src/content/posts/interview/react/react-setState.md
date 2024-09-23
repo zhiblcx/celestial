@@ -1,5 +1,5 @@
 ---
-title: 'React setState执行机制'
+title: 'React系列 —— setState执行机制'
 description: '面试官：说说 React中的setState执行机制'
 pubDate: '2024-09-22 21:01:00'
 category: 'interview'

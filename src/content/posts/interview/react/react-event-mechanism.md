@@ -1,5 +1,5 @@
 ---
-title: 'React 事件机制'
+title: 'React系列 —— 事件机制'
 description: '面试官：说说React的事件机制？'
 pubDate: '2024-09-23 07:16:00'
 category: 'interview'

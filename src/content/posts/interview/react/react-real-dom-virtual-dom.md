@@ -1,5 +1,5 @@
 ---
-title: '真实DOM和虚拟DOM'
+title: 'React系列 —— 真实DOM和虚拟DOM'
 description: '面试官：说说 Real DOM 和 Virtual DOM 的区别？优缺点？'
 pubDate: '2024-09-22 19:38:00'
 category: 'interview'

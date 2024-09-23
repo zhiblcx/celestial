@@ -1,5 +1,5 @@
 ---
-title: 'React 组件通信'
+title: 'React系列 —— 组件通信'
 description: '面试官：React中组件之间如何通信？'
 pubDate: '2024-09-23 12:35:00'
 category: 'interview'
@@ -44,10 +44,10 @@ function EmailInput(props) {
     <label>
       Email: <input value={props.email} />
     </label>
-  );
+  )
 }
 
-const element = <EmailInput email="123124132@163.com" />;
+const element = <EmailInput email="123124132@163.com" />
 ```
 
 ### 子组件向父组件传递
@@ -59,16 +59,16 @@ const element = <EmailInput email="123124132@163.com" />;
 ```jsx
 class Parents extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      price: 0
-    };
+      price: 0,
+    }
   }
 
   getItemPrice(e) {
     this.setState({
-      price: e
-    });
+      price: e,
+    })
   }
 
   render() {
@@ -78,7 +78,7 @@ class Parents extends Component {
         {/* 向子组件中传入一个函数  */}
         <Child getPrice={this.getItemPrice.bind(this)} />
       </div>
-    );
+    )
   }
 }
 ```
@@ -89,7 +89,7 @@ class Parents extends Component {
 class Child extends Component {
   clickGoods(e) {
     // 在此函数中传入值
-    this.props.getPrice(e);
+    this.props.getPrice(e)
   }
 
   render() {
@@ -98,7 +98,7 @@ class Child extends Component {
         <button onClick={this.clickGoods.bind(this, 100)}>goods1</button>
         <button onClick={this.clickGoods.bind(this, 1000)}>goods2</button>
       </div>
-    );
+    )
   }
 }
 ```
@@ -111,22 +111,18 @@ class Child extends Component {
 class Parent extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {count: 0}
+    this.state = { count: 0 }
   }
   setCount = () => {
-    this.setState({count: this.state.count + 1})
+    this.setState({ count: this.state.count + 1 })
   }
   render() {
     return (
       <div>
-        <SiblingA
-          count={this.state.count}
-        />
-        <SiblingB
-          onClick={this.setCount}
-        />
+        <SiblingA count={this.state.count} />
+        <SiblingB onClick={this.setCount} />
       </div>
-    );
+    )
   }
 }
 ```
@@ -140,7 +136,7 @@ class Parent extends React.Component {
 通过使用 **React.createContext** 创建一个**context**
 
 ```js
- const PriceContext = React.createContext('price')
+const PriceContext = React.createContext('price')
 ```
 
 **context** 创建成功后，其下存在 **Provider** 组件用于创建数据源，**Consumer** 组件用于接收数据，使用实例如下：
@@ -148,17 +144,16 @@ class Parent extends React.Component {
 **Provider** 组件通过 **value** 属性用于给后代组件传递数据：
 
 ```jsx
-<PriceContext.Provider value={100}>
-</PriceContext.Provider>
+<PriceContext.Provider value={100}></PriceContext.Provider>
 ```
 
 如果想要获取 **Provider** 传递的数据，可以通过 **Consumer** 组件或者或者使用 **contextType** 属性接收，对应分别如下：
 
 ```jsx
 class MyClass extends React.Component {
-  static contextType = PriceContext;
+  static contextType = PriceContext
   render() {
-    let price = this.context;
+    let price = this.context
     /* 基于这个值进行渲染工作 */
   }
 }
@@ -168,10 +163,8 @@ class MyClass extends React.Component {
 
 ```jsx
 <PriceContext.Consumer>
-    { /*这里是一个函数*/ }
-    {
-        price => <div>price：{price}</div>
-    }
+  {/*这里是一个函数*/}
+  {(price) => <div>price：{price}</div>}
 </PriceContext.Consumer>
 ```
 

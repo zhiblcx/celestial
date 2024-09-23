@@ -1,5 +1,5 @@
 ---
-title: 'React super() 和 super(props)'
+title: 'React系列 —— super() 和 super(props)'
 description: '面试官：super() 和 super(props) 有什么区别？'
 pubDate: '2024-09-22 21:07:00'
 category: 'interview'

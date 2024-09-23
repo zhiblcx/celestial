@@ -1,5 +1,5 @@
 ---
-title: 'React 事件绑定'
+title: 'React系列 —— 事件绑定'
 description: '面试官：React事件绑定的方式有哪些？区别？'
 pubDate: '2024-09-23 10:53:00'
 category: 'interview'

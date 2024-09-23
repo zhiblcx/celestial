@@ -1,5 +1,5 @@
 ---
-title: 'React state 和 props'
+title: 'React系列 —— state 和 props'
 description: '面试官：state 和 props 有什么区别？'
 pubDate: '2024-09-22 21:01:00'
 category: 'interview'

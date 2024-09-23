@@ -1,5 +1,5 @@
 ---
-title: 'React 构建组件'
+title: 'React系列 —— 构建组件'
 description: '面试官：React构建组件的方式有哪些？区别？'
 pubDate: '2024-09-23 11:12:00'
 category: 'interview'
@@ -38,7 +38,7 @@ show: false
 在 **React** 中，通过函数简单创建组件的示例如下：
 
 ```jsx
-function HelloComponent(props, /* context */) {
+function HelloComponent(props /* context */) {
   return <div>Hello {props.name}</div>
 }
 ```
@@ -50,13 +50,8 @@ function HelloComponent(props, /* context */) {
 像上述通过函数式创建的组件的方式，最终会通过 **babel** 转化成 **React.createClass** 这种形式，转化成如下：
 
 ```jsx
-function HelloComponent(props) /* context */{
-  return React.createElement(
-    "div",
-    null,
-    "Hello ",
-    props.name
-  );
+function HelloComponent(props) /* context */ {
+  return React.createElement('div', null, 'Hello ', props.name)
 }
 ```
 
@@ -75,30 +70,26 @@ function HelloComponent(props) /* context */{
 ```jsx
 class Timer extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
+    super(props)
+    this.state = { seconds: 0 }
   }
 
   tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
+    this.setState((state) => ({
+      seconds: state.seconds + 1,
+    }))
   }
 
   componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
+    this.interval = setInterval(() => this.tick(), 1000)
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    clearInterval(this.interval)
   }
 
   render() {
-    return (
-      <div>
-        Seconds: {this.state.seconds}
-      </div>
-    );
+    return <div>Seconds: {this.state.seconds}</div>
   }
 }
 ```

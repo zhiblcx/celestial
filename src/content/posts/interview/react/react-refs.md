@@ -1,5 +1,5 @@
 ---
-title: 'React refs'
+title: 'React系列 —— refs'
 description: '面试官：说说对React refs 的理解？应用场景？'
 pubDate: '2024-09-23 14:19:00'
 category: 'interview'

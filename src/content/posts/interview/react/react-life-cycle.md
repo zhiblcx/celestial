@@ -1,5 +1,5 @@
 ---
-title: 'React 生命周期'
+title: 'React系列 —— 生命周期'
 description: '面试官：说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？'
 pubDate: '2024-09-22 20:41:00'
 category: 'interview'

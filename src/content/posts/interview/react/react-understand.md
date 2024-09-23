@@ -1,5 +1,5 @@
 ---
-title: 'React的理解'
+title: 'React系列 —— React的理解'
 description: '面试官：说说对 React 的理解？有哪些特性？'
 pubDate: '2024-09-22 19:38:00'
 category: 'interview'
