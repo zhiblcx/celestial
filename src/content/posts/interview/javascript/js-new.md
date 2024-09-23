@@ -3,7 +3,7 @@ title: 'javascript系列 —— new操作符'
 description: '面试官：说说new操作符具体干了什么？'
 pubDate: '2024-09-18 18:40:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/main/js-event-proxy.png'
+cardImage: '@images/interview/javascript/main/js-new.png'
 tags: ['interview']
 selected: true
 show: false
@@ -16,15 +16,15 @@ show: false
 例子
 
 ```js
-function Person(name, age){
-    this.name = name;
-    this.age = age;
+function Person(name, age) {
+  this.name = name
+  this.age = age
 }
 Person.prototype.sayName = function () {
-    console.log(this.name)
+  console.log(this.name)
 }
 const person1 = new Person('Tom', 20)
-console.log(person1)  // Person {name: "Tom", age: 20}
+console.log(person1) // Person {name: "Tom", age: 20}
 t.sayName() // 'Tom'
 ```
 
@@ -73,18 +73,18 @@ console.log(t.name) // 'undefined'
 举个例子：
 
 ```js
-function Person(name, age){
-    this.name = name;
-    this.age = age;
+function Person(name, age) {
+  this.name = name
+  this.age = age
 }
 const person1 = new Person('Tom', 20)
-console.log(person1)  // Person {name: "Tom", age: 20}
+console.log(person1) // Person {name: "Tom", age: 20}
 t.sayName() // 'Tom'
 ```
 
 流程图如下：
 
-![''](@images/interview/javascript/js-event-proxy/image.png)
+![''](@images/interview/javascript/js-new/image.png)
 
 ## 三、手写 new 操作符
 
@@ -94,14 +94,14 @@ t.sayName() // 'Tom'
 
 ```js
 function mynew(Func, ...args) {
-    // 1.创建一个新对象
-    const obj = {}
-    // 2.新对象原型指向构造函数原型对象
-    obj.__proto__ = Func.prototype
-    // 3.将构建函数的this指向新对象
-    let result = Func.apply(obj, args)
-    // 4.根据返回值判断
-    return result instanceof Object ? result : obj
+  // 1.创建一个新对象
+  const obj = {}
+  // 2.新对象原型指向构造函数原型对象
+  obj.__proto__ = Func.prototype
+  // 3.将构建函数的this指向新对象
+  const result = Func.apply(obj, args)
+  // 4.根据返回值判断
+  return result instanceof Object ? result : obj
 }
 ```
 
@@ -109,20 +109,20 @@ function mynew(Func, ...args) {
 
 ```js
 function mynew(func, ...args) {
-    const obj = {}
-    obj.__proto__ = func.prototype
-    let result = func.apply(obj, args)
-    return result instanceof Object ? result : obj
+  const obj = {}
+  obj.__proto__ = func.prototype
+  const result = func.apply(obj, args)
+  return result instanceof Object ? result : obj
 }
 function Person(name, age) {
-    this.name = name;
-    this.age = age;
+  this.name = name
+  this.age = age
 }
 Person.prototype.say = function () {
-    console.log(this.name)
+  console.log(this.name)
 }
 
-let p = mynew(Person, "huihui", 123)
+const p = mynew(Person, 'huihui', 123)
 console.log(p) // Person {name: "huihui", age: 123}
 p.say() // huihui
 ```
