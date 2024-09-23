@@ -28,26 +28,26 @@ show: false
 因此所有在全局作用域中声明的变量、函数都会变成 **window** 对象的属性和方法
 
 ```js
-var name = 'js每日一题';
-function lookName(){
-  alert(this.name);
+const name = 'js每日一题'
+function lookName() {
+  alert(this.name)
 }
 
-console.log(window.name);  // js每日一题
-lookName();                // js每日一题
-window.lookName();         // js每日一题
+console.log(window.name) // js每日一题
+lookName() // js每日一题
+window.lookName() // js每日一题
 ```
 
 关于窗口控制方法如下：
 
-| 方法          | 描述                                                         |
-| ------------- | ------------------------------------------------------------ |
-| moveBy(x,y)   | 从当前位置水平移动窗体 x 个像素，垂直移动窗体 y 个像素，x 为负数，将向左移动窗体，y为负数，将向上移动窗体 |
-| moveTo(x,y)   | 移动窗体左上角到相对于屏幕左上角的 (x,y) 点                  |
-| resizeBy(w,h) | 相对窗体当前的大小，宽度调整 w 个像素，高度调整 h 个像素。如果参数为负值，将缩小窗体，反之扩大窗体 |
-| resizeTo(w,h) | 把窗体宽度调整为 w 个像素，高度调整为 h 个像素               |
+| 方法          | 描述                                                                                                               |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ |
+| moveBy(x,y)   | 从当前位置水平移动窗体 x 个像素，垂直移动窗体 y 个像素，x 为负数，将向左移动窗体，y为负数，将向上移动窗体          |
+| moveTo(x,y)   | 移动窗体左上角到相对于屏幕左上角的 (x,y) 点                                                                        |
+| resizeBy(w,h) | 相对窗体当前的大小，宽度调整 w 个像素，高度调整 h 个像素。如果参数为负值，将缩小窗体，反之扩大窗体                 |
+| resizeTo(w,h) | 把窗体宽度调整为 w 个像素，高度调整为 h 个像素                                                                     |
 | scrollTo(x,y) | 如果有滚动条，将横向滚动条移动到相对于窗体宽度为 x 个像素的位置，将纵向滚动条移动到相对于窗体高度为 y 个像素的位置 |
-| scrollBy(x,y) | 如果有滚动条，将横向滚动条向左移动 x 个像素，将纵向滚动条向下移动 y 个像素 |
+| scrollBy(x,y) | 如果有滚动条，将横向滚动条向左移动 x 个像素，将纵向滚动条向下移动 y 个像素                                         |
 
 **window.open()** 既可以导航到一个特定的 **url**，也可以打开一个新的浏览器窗口
 
@@ -61,7 +61,7 @@ window.open('htttp://www.vue3js.cn','topFrame')
 window.open() 会返回新窗口的引用，也就是新窗口的 window 对象
 
 ```js
-const myWin = window.open('http://www.vue3js.cn','myWin')
+const myWin = window.open('http://www.vue3js.cn', 'myWin')
 ```
 
 **window.close()** 仅用于通过 **window.open()** 打开的窗口
@@ -78,16 +78,16 @@ http://foouser:barpassword@www.wrox.com:80/WileyCDA/?q=javascript#contents
 
 **location** 属性描述如下：
 
-| 属性名   | 例子                                                   | 说明                                |
-| -------- | ------------------------------------------------------ | ----------------------------------- |
-| hash     | "#contents"                                            | utl中#后面的字符，没有则返回空串    |
-| host     | www.wrox.com:80                                        | 服务器名称和端口号                  |
-| hostname | www.wrox.com                                           | 域名，不带端口号                    |
-| href     | http://www.wrox.com:80/WileyCDA/?q=javascript#contents | 完整url                             |
-| pathname | "/WileyCDA/"                                           | 服务器下面的文件路径                |
-| port     | 80                                                     | url的端口号，没有则为空             |
-| protocol | http:                                                  | 使用的协议                          |
-| search   | ?q=javascript                                          | url的查询字符串，通常为？后面的内容 |
+| 属性名   | 例子                                                     | 说明                                |
+| -------- | -------------------------------------------------------- | ----------------------------------- |
+| hash     | "#contents"                                              | utl中#后面的字符，没有则返回空串    |
+| host     | <www.wrox.com:80>                                        | 服务器名称和端口号                  |
+| hostname | <www.wrox.com>                                           | 域名，不带端口号                    |
+| href     | <http://www.wrox.com:80/WileyCDA/?q=javascript#contents> | 完整url                             |
+| pathname | "/WileyCDA/"                                             | 服务器下面的文件路径                |
+| port     | 80                                                       | url的端口号，没有则为空             |
+| protocol | http:                                                    | 使用的协议                          |
+| search   | ?q=javascript                                            | url的查询字符串，通常为？后面的内容 |
 
 除了 **hash**之外，只要修改 **location** 的一个属性，就会导致页面重新加载新 URL
 
@@ -126,8 +126,8 @@ history.go('maixaofei.com')
 当参数为整数数字的时候，正数表示向前跳转指定的页面，负数为向后跳转指定的页面
 
 ```js
-history.go(3) //向前跳转三个记录
-history.go(-1) //向后跳转一个记录
+history.go(3) // 向前跳转三个记录
+history.go(-1) // 向后跳转一个记录
 ```
 
 - history.forward()：向前跳转一个页面
