@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-state-props.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、state
@@ -17,16 +18,16 @@ selected: true
 ```jsx
 class Button extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       count: 0,
-    };
+    }
   }
 
   updateCount() {
     this.setState((prevState, props) => {
-      return { count: prevState.count + 1 };
-    });
+      return { count: prevState.count + 1 }
+    })
   }
 
   render() {
@@ -34,7 +35,7 @@ class Button extends React.Component {
       <button onClick={() => this.updateCount()}>
         Clicked {this.state.count} times
       </button>
-    );
+    )
   }
 }
 ```
@@ -44,10 +45,10 @@ class Button extends React.Component {
 ```js
 this.setState(
   {
-    name: "JS每日一题",
+    name: 'JS每日一题',
   },
-  () => console.log("setState finished")
-);
+  () => console.log('setState finished')
+)
 ```
 
 ## 二、props
@@ -63,11 +64,11 @@ props 除了可以传字符串，数字，还可以传递对象，数组甚至�
 ```jsx
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello {this.props.name}</h1>;
+    return <h1>Hello {this.props.name}</h1>
   }
 }
 
-const element = <Welcome name="Sara" onNameChanged={this.handleName} />;
+const element = <Welcome name="Sara" onNameChanged={this.handleName} />
 ```
 
 上述 **name** 属性与 **onNameChanged** 方法都能在子组件的 **props** 变量中访问

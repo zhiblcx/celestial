@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-life-cycle.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、是什么

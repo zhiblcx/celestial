@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-super.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、ES6类

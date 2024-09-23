@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-event-binding.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、是什么
@@ -17,11 +18,11 @@ selected: true
 ```jsx
 class ShowAlert extends React.Component {
   showAlert() {
-    console.log("Hi");
+    console.log('Hi')
   }
 
   render() {
-    return <button onClick={this.showAlert}>show</button>;
+    return <button onClick={this.showAlert}>show</button>
   }
 }
 ```
@@ -46,12 +47,10 @@ class ShowAlert extends React.Component {
 ```jsx
 class App extends React.Component {
   handleClick() {
-    console.log('this > ', this);
+    console.log('this > ', this)
   }
   render() {
-    return (
-      <div onClick={this.handleClick.bind(this)}>test</div>
-    )
+    return <div onClick={this.handleClick.bind(this)}>test</div>
   }
 }
 ```
@@ -65,12 +64,10 @@ class App extends React.Component {
 ```jsx
 class App extends React.Component {
   handleClick() {
-    console.log('this > ', this);
+    console.log('this > ', this)
   }
   render() {
-    return (
-      <div onClick={e => this.handleClick(e)}>test</div>
-    )
+    return <div onClick={(e) => this.handleClick(e)}>test</div>
   }
 }
 ```
@@ -82,16 +79,14 @@ class App extends React.Component {
 ```jsx
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
+    super(props)
+    this.handleClick = this.handleClick.bind(this)
   }
   handleClick() {
-    console.log('this > ', this);
+    console.log('this > ', this)
   }
   render() {
-    return (
-      <div onClick={this.handleClick}>test</div>
-    )
+    return <div onClick={this.handleClick}>test</div>
   }
 }
 ```
@@ -103,15 +98,13 @@ class App extends React.Component {
 ```jsx
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
   handleClick = () => {
-    console.log('this > ', this);
+    console.log('this > ', this)
   }
   render() {
-    return (
-      <div onClick={this.handleClick}>test</div>
-    )
+    return <div onClick={this.handleClick}>test</div>
   }
 }
 ```

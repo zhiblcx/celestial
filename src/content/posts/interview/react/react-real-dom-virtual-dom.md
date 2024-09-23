@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-real-dom-virtual-dom.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、是什么
@@ -22,11 +23,11 @@ Virtual Dom，本质上是以 JavaScript 对象形式存在的对 DOM 的描述
 
 ```jsx
 // 创建 h1 标签，右边千万不能加引号
-const vDom = <h1>Hello World</h1>; 
+const vDom = <h1>Hello World</h1>
 // 找到 <div id="root"></div> 节点
-const root = document.getElementById("root"); 
+const root = document.getElementById('root')
 // 把创建的 h1 标签渲染到 root 节点上
-ReactDOM.render(vDom, root); 
+ReactDOM.render(vDom, root)
 ```
 
 上述中，**ReactDOM.render()** 用于将你创建好的虚拟 DOM 节点插入到某个真实节点上，并渲染到页面上
@@ -81,7 +82,7 @@ const vDom = React.createElement(
 
 使用虚拟 **DOM** 的优势如下：
 
-- 简单方便：如果使用手动操作真实  **DOM** 来完成页面，繁琐又容易出错，在大规模应用下维护起来也很困难
+- 简单方便：如果使用手动操作真实 **DOM** 来完成页面，繁琐又容易出错，在大规模应用下维护起来也很困难
 - 性能方面：使用 Virtual DOM，能够有效避免真实 **DOM** 数频繁更新，减少多次引起重绘与回流，提高渲染性能
 - 跨平台：React 借助虚拟 DOM，带来了跨平台的能力，一套代码多端运行
 

@@ -6,6 +6,7 @@ category: 'interview'
 cardImage: '@images/interview/react/main/react-setState.png'
 tags: ['interview', 'react']
 selected: true
+show: false
 ---
 
 ## 一、是什么
@@ -20,28 +21,28 @@ selected: true
 import React, { Component } from 'react'
 
 export default class App extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props)
 
-        this.state = {
-            message: "Hello World"
-        }
+    this.state = {
+      message: 'Hello World',
     }
+  }
 
-    render() {
-        return (
-            <div>
-                <h2>{this.state.message}</h2>
-                <button onClick={e => this.changeText()}>面试官系列</button>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <h2>{this.state.message}</h2>
+        <button onClick={(e) => this.changeText()}>面试官系列</button>
+      </div>
+    )
+  }
 
-    changeText() {
-        this.setState({
-            message: "JS每日一题"
-        })
-    }
+  changeText() {
+    this.setState({
+      message: 'JS每日一题',
+    })
+  }
 }
 ```
 
@@ -64,16 +65,16 @@ changeText() {
 关于 **state** 方法的定义是从 **React.Component** 中继承，定义的源码如下：
 
 ```js
-Component.prototype.setState = function(partialState, callback) {
+Component.prototype.setState = function (partialState, callback) {
   invariant(
     typeof partialState === 'object' ||
       typeof partialState === 'function' ||
       partialState == null,
     'setState(...): takes an object of state variables to update or a ' +
-      'function which returns an object of state variables.',
-  );
-  this.updater.enqueueSetState(this, partialState, callback, 'setState');
-};
+      'function which returns an object of state variables.'
+  )
+  this.updater.enqueueSetState(this, partialState, callback, 'setState')
+}
 ```
 
 从上面可以看到 **setState** 第一个参数可以是一个对象，或者是一个函数，而第二个参数是一个回调函数，用于可以实时的获取到更新之后的数据
@@ -154,20 +155,20 @@ componentDidMount() {
 
 ```jsx
 handleClick = () => {
-    this.setState({
-        count: this.state.count + 1,
-    })
-    console.log(this.state.count) // 1
+  this.setState({
+    count: this.state.count + 1,
+  })
+  console.log(this.state.count) // 1
 
-    this.setState({
-        count: this.state.count + 1,
-    })
-    console.log(this.state.count) // 1
+  this.setState({
+    count: this.state.count + 1,
+  })
+  console.log(this.state.count) // 1
 
-    this.setState({
-        count: this.state.count + 1,
-    })
-    console.log(this.state.count) // 1
+  this.setState({
+    count: this.state.count + 1,
+  })
+  console.log(this.state.count) // 1
 }
 ```
 
@@ -192,12 +193,12 @@ Object.assign(
 
 ```jsx
 onClick = () => {
-    this.setState((prevState, props) => {
-      return {count: prevState.count + 1};
-    });
-    this.setState((prevState, props) => {
-      return {count: prevState.count + 1};
-    });
+  this.setState((prevState, props) => {
+    return { count: prevState.count + 1 }
+  })
+  this.setState((prevState, props) => {
+    return { count: prevState.count + 1 }
+  })
 }
 ```
 
