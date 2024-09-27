@@ -3,7 +3,7 @@ title: 'React系列 —— router模式'
 description: '面试官：说说React Router有几种模式？实现原理？'
 pubDate: '2024-09-24 19:48:00'
 category: 'interview'
-cardImage: '@images/interview/react/main/react-build-component.png'
+cardImage: '@images/interview/react/main/react-router-mode.png'
 tags: ['interview', 'react']
 selected: true
 show: false
@@ -18,7 +18,7 @@ show: false
 
 其中主要分成了两种模式：
 
-- hash 模式：在url后面加上#，如 http://127.0.0.1:5500/home/#/page1
+- hash 模式：在url后面加上#，如 <http://127.0.0.1:5500/home/#/page1>
 - history 模式：允许操作浏览器的曾经在标签页或者框架里访问的会话历史记录
 
 ## 二、使用
@@ -34,31 +34,30 @@ React Router 对应的 hash 模式和 history 模式对应的组件为：
 // 1.import { BrowserRouter as Router } from "react-router-dom";
 // 2.import { HashRouter as Router } from "react-router-dom";
 
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
-  // HashRouter as Router  
+  // HashRouter as Router
   Switch,
   Route,
-} from "react-router-dom";
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Backend from './pages/Backend';
-import Admin from './pages/Admin';
-
+} from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Backend from './pages/Backend'
+import Admin from './pages/Admin'
 
 function App() {
   return (
     <Router>
-        <Route path="/login" component={Login}/>
-        <Route path="/backend" component={Backend}/>
-        <Route path="/admin" component={Admin}/>
-        <Route path="/" component={Home}/>
+      <Route path="/login" component={Login} />
+      <Route path="/backend" component={Backend} />
+      <Route path="/admin" component={Admin} />
+      <Route path="/" component={Home} />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 ## 三、实现原理
@@ -82,7 +81,7 @@ export default App;
 然后通过 **context** 将 **location** 数据往后代组件传递，如下：
 
 ```jsx
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Provider } from './context'
 // 该组件下Api提供给子组件使用
 class HashRouter extends Component {
@@ -90,36 +89,33 @@ class HashRouter extends Component {
     super()
     this.state = {
       location: {
-        pathname: window.location.hash.slice(1) || '/'
-      }
+        pathname: window.location.hash.slice(1) || '/',
+      },
     }
   }
   // url路径变化 改变location
   componentDidMount() {
     window.location.hash = window.location.hash || '/'
     window.addEventListener('hashchange', () => {
-      this.setState({
-        location: {
-          ...this.state.location,
-          pathname: window.location.hash.slice(1) || '/'
-        }
-      }, () => console.log(this.state.location))
+      this.setState(
+        {
+          location: {
+            ...this.state.location,
+            pathname: window.location.hash.slice(1) || '/',
+          },
+        },
+        () => console.log(this.state.location)
+      )
     })
   }
   render() {
     let value = {
-      location: this.state.location
+      location: this.state.location,
     }
-    return (
-      <Provider value={value}>
-        {
-          this.props.children
-        }
-      </Provider>
-    );
+    return <Provider value={value}>{this.props.children}</Provider>
   }
 }
-export default HashRouter;
+export default HashRouter
 ```
 
 ### Router
@@ -127,31 +123,29 @@ export default HashRouter;
 **Router** 组件主要做的是通过 **BrowserRouter** 传过来的当前值，通过 **props** 传进来的 **path** 与 **context** 传进来的 **pathname** 进行匹配，然后决定是否执行渲染组件。
 
 ```js
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Consumer } from './context'
-const { pathToRegexp } = require("path-to-regexp");
+const { pathToRegexp } = require('path-to-regexp')
 class Route extends Component {
   render() {
     return (
       <Consumer>
-        {
-          state => {
-            console.log(state)
-            let {path, component: Component} = this.props
-            let pathname = state.location.pathname
-            let reg = pathToRegexp(path, [], {end: false})
-            // 判断当前path是否包含pathname
-            if(pathname.match(reg)) {
-              return <Component></Component>
-            }
-            return null
+        {(state) => {
+          console.log(state)
+          let { path, component: Component } = this.props
+          let pathname = state.location.pathname
+          let reg = pathToRegexp(path, [], { end: false })
+          // 判断当前path是否包含pathname
+          if (pathname.match(reg)) {
+            return <Component></Component>
           }
-        }
+          return null
+        }}
       </Consumer>
-    );
+    )
   }
 }
-export default Route;
+export default Route
 ```
 
 [文章来源](https://vue3js.cn/interview/React/React%20Router%20model.html)

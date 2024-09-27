@@ -3,7 +3,7 @@ title: 'React系列 —— React Router'
 description: '面试官：说说你对React Router的理解？常用的Router组件有哪些？'
 pubDate: '2024-09-24 16:51:00'
 category: 'interview'
-cardImage: '@images/interview/react/main/react-refs.png'
+cardImage: '@images/interview/react/main/react-router-understand.png'
 tags: ['interview', 'react']
 selected: true
 show: false
@@ -43,7 +43,7 @@ show: false
 使用两者作为最顶层组件包裹其他组件
 
 ```jsx
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -52,19 +52,19 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              < a href=" ">Home</ a>
+              <a href=" ">Home</a>
             </li>
             <li>
-              < a href="/about">About</ a>
+              <a href="/about">About</a>
             </li>
             <li>
-              < a href="/contact">Contact</ a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </nav>
       </main>
     </Router>
-  );
+  )
 }
 ```
 
@@ -78,7 +78,7 @@ Route 用于路径的匹配，然后进行组件的渲染，对应的属性如�
 - exact 属性：开启精准匹配，只有精准匹配到完全一致的路径，才会渲染对应的组件
 
 ```jsx
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 export default function App() {
   return (
@@ -87,20 +87,20 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              < a href="/">Home</ a>
+              <a href="/">Home</a>
             </li>
             <li>
-              < a href="/about">About</ a>
+              <a href="/about">About</a>
             </li>
             <li>
-              < a href="/contact">Contact</ a>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </nav>
         <Route path="/" render={() => <h1>Welcome!</h1>} />
       </main>
     </Router>
-  );
+  )
 }
 ```
 
@@ -129,10 +129,10 @@ NavLink 是在 Link 基础之上增加了一些样式属性，例如组件被选
 const Contact = ({ history }) => (
   <Fragment>
     <h1>Contact</h1>
-    <button onClick={() => history.push("/")}>Go to home</button>
+    <button onClick={() => history.push('/')}>Go to home</button>
     <FakeText />
   </Fragment>
-);
+)
 ```
 
 props 中接收到的 history 对象具有一些方便的方法，如 goBack，goForward,push
@@ -149,7 +149,7 @@ const About = ({
 }) => (
   // props.match.params.name
   <Fragment>
-    {name !== "tom" ? <Redirect to="/" /> : null}
+    {name !== 'tom' ? <Redirect to="/" /> : null}
     <h1>About {name}</h1>
     <FakeText />
   </Fragment>
@@ -187,33 +187,33 @@ swich 组件的作用适用于当匹配到第一个组件的时候，后面的�
 useHistory 可以让组件内部直接访问 history，无须通过 props 获取
 
 ```js
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 
 const Contact = () => {
-  const history = useHistory();
+  const history = useHistory()
   return (
     <Fragment>
       <h1>Contact</h1>
-      <button onClick={() => history.push("/")}>Go to home</button>
+      <button onClick={() => history.push('/')}>Go to home</button>
     </Fragment>
-  );
-};
+  )
+}
 ```
 
 ### useParams
 
 ```jsx
 const About = () => {
-  const { name } = useParams();
+  const { name } = useParams()
   return (
     // props.match.params.name
     <Fragment>
-      {name !== "John Doe" ? <Redirect to="/" /> : null}
+      {name !== 'John Doe' ? <Redirect to="/" /> : null}
       <h1>About {name}</h1>
       <Route component={Contact} />
     </Fragment>
-  );
-};
+  )
+}
 ```
 
 ### useLocation
@@ -221,18 +221,18 @@ const About = () => {
 useLocation 会返回当前 URL 的 location 对象
 
 ```jsx
-import { useLocation } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 
 const Contact = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   return (
     <Fragment>
       <h1>Contact</h1>
-      <p>Current URL: {pathname}</p >
+      <p>Current URL: {pathname}</p>
     </Fragment>
-  );
-};
+  )
+}
 ```
 
 ## 三、参数传递
@@ -288,12 +288,14 @@ console.log(props.location.search)
 传递方式如下：
 
 ```jsx
-<NavLink to={{
-    pathname: "/detail2", 
-    query: {name: "kobe", age: 30},
-    state: {height: 1.98, address: "洛杉矶"},
-    search: "?apikey=123"
-  }}>
+<NavLink
+  to={{
+    pathname: '/detail2',
+    query: { name: 'kobe', age: 30 },
+    state: { height: 1.98, address: '洛杉矶' },
+    search: '?apikey=123',
+  }}
+>
   详情2
 </NavLink>
 ```

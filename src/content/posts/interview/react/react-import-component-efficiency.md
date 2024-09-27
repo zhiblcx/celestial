@@ -3,7 +3,7 @@ title: 'React系列 —— 提高组件渲染效率'
 description: '面试官：说说你是如何提高组件的渲染效率的？在React中如何避免不必要的render？'
 pubDate: '2024-09-25 16:16:00'
 category: 'interview'
-cardImage: '@images/interview/react/main/react-immutable.png'
+cardImage: '@images/interview/react/main/react-import-component-efficiency.png'
 tags: ['interview', 'react']
 selected: true
 show: false
