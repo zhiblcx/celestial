@@ -3,7 +3,7 @@ title: 'React系列 —— 捕获异常'
 description: '面试官：说说你在React项目是如何捕获错误的？'
 pubDate: '2024-09-27 19:45:00'
 category: 'interview'
-cardImage: '@images/interview/react/main/react-build-component.png'
+cardImage: '@images/interview/react/main/react-capture-error.png'
 tags: ['interview', 'react']
 selected: true
 show: false
@@ -79,7 +79,7 @@ class ErrorBoundary extends React.Component {
 
 除了错误信息和 **JavaScript** 栈外，React 16 还提供了组件栈追踪。现在你可以准确地查看发生在组件树内的错误信息：
 
-![''](@images/interview/react/react-build-component/image.png)
+![''](@images/interview/react/react-capture-error/image.png)
 
 可以看到在错误信息下方文字中存在一个组件栈，便于我们追踪错误
 
