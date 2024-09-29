@@ -1,7 +1,7 @@
 ---
-title: 'javascript系列 —— JavaScript中的数据类型以及存储上的差别'
-description: '面试官：说说JavaScript中的数据类型？存储上的差别？'
-pubDate: '2024-09-07 19:05:00'
+title: 'javascript系列 —— 事件循环'
+description: '面试官：说说你对事件循环的理解'
+pubDate: '2024-09-29 15:57:00'
 category: 'interview'
 cardImage: '@images/interview/javascript/main/js-event-loop.png'
 tags: ['interview']
@@ -63,12 +63,158 @@ console.log(3)
 
 原因在于异步任务还可以细分为微任务与宏任务
 
+### 微任务
+
+一个需要异步执行的函数，执行时机是在主函数执行结束之后、当前宏任务结束之前
+
+常见的微任务有：
+
+- Promise.then
+- MutaionObserver
+- Object.observe（已废弃，Proxy 对象替代）
+- process.nextTick（Node.js）
+
 ### 宏任务
 
-### 微任务
+宏任务的时间粒度比较大，执行的时间间隔是不能精确控制的，对一些高实时性的需求就不太符合
+
+常见的宏任务有：
+
+- script (可以理解为外层同步代码)
+- setTimeout/setInterval
+- UI rendering/UI事件
+- postMessage、MessageChannel
+- setImmediate、I/O（Node.js）
+
+这时候，事件循环，宏任务，微任务的关系如图所示
+
+![''](@images/interview/javascript/js-event-loop/image2.png)
+
+按照这个流程，它的执行机制是：
+
+- 执行一个宏任务，如果遇到微任务就将它放到微任务的事件队列中
+- 当前宏任务执行完成后，会查看微任务的事件队列，然后将里面的所有微任务依次执行完
+
+回到上面的题目
+
+```js
+console.log(1)
+setTimeout(()=>{
+    console.log(2)
+}, 0)
+new Promise((resolve, reject)=>{
+    console.log('new Promise')
+    resolve()
+}).then(()=>{
+    console.log('then')
+})
+console.log(3)
+```
+
+流程如下
+
+```js
+// 遇到 console.log(1) ，直接打印 1
+// 遇到定时器，属于新的宏任务，留着后面执行
+// 遇到 new Promise，这个是直接执行的，打印 'new Promise'
+// .then 属于微任务，放入微任务队列，后面再执行
+// 遇到 console.log(3) 直接打印 3
+// 好了本轮宏任务执行完毕，现在去微任务列表查看是否有微任务，发现 .then 的回调，执行它，打印 'then'
+// 当一次宏任务执行完，再去执行新的宏任务，这里就剩一个定时器的宏任务了，执行它，打印 2
+```
 
 ## 三、async 与 await
 
+**async** 是异步的意思，**await** 则可以理解为 **async wait**。所以可以理解 **async** 就是用来声明一个异步方法，而 **await** 是用来等待异步方法执行
+
+### async
+
+async 函数返回一个 promise 对象，下面两种方法是等效的
+
+```js
+function f() {
+    return Promise.resolve('TEST');
+}
+
+// asyncF is equivalent to f!
+async function asyncF() {
+    return 'TEST';
+}
+```
+
+### await
+
+正常情况下，**await** 命令后面是一个 **Promise** 对象，返回该对象的结果。如果不是 **Promise** 对象，就直接返回对应的值
+
+```js
+async function f(){
+    // 等同于
+    // return 123
+    return await 123
+}
+f().then(v => console.log(v)) // 123
+```
+
+不管 **await** 后面跟着的是什么，**await** 都会阻塞后面的代码
+
+```js
+async function fn1 (){
+    console.log(1)
+    await fn2()
+    console.log(2) // 阻塞
+}
+
+async function fn2 (){
+    console.log('fn2')
+}
+
+fn1()
+console.log(3)
+```
+
+上面的例子中，**await** 会阻塞下面的代码（即加入微任务队列），先执行 **async** 外面的同步代码，同步代码执行完，再回到 **async** 函数中，再执行之前阻塞的代码
+
+所以上述输出结果为：**1，fn2，3，2**
+
 ## 四、流程分析
+
+通过对上面的了解，我们对 **JavaScript** 对各种场景的执行顺序有了大致的了解
+
+这里直接上代码：
+
+```js
+async function async1() {
+    console.log('async1 start')
+    await async2()
+    console.log('async1 end')
+}
+async function async2() {
+    console.log('async2')
+}
+console.log('script start')
+setTimeout(function () {
+    console.log('settimeout')
+})
+async1()
+new Promise(function (resolve) {
+    console.log('promise1')
+    resolve()
+}).then(function () {
+    console.log('promise2')
+})
+console.log('script end')
+```
+
+![''](@images/interview/javascript/js-event-loop/image3.gif)
+
+分析过程：
+
+- 执行整段代码，遇到 **console.log('script start')** 直接打印结果，输出 script start
+- 遇到定时器了，它是宏任务，先放着不执行
+- 遇到 **async1()**，执行 **async1** 函数，先打印 **async1 start**，下面遇到 **await** 怎么办？先执行 **async2**，打印 **async2**，然后阻塞下面代码（即加入微任务列表），跳出去执行同步代码
+- 跳到 **new Promise** 这里，直接执行，打印 **promise1**，下面遇到 **.then()**，它是微任务，放到微任务列表等待执行
+- 最后一行直接打印 **script end**，现在同步代码执行完了，开始执行微任务，即 **await** 下面的代码，打印 **async1 end**
+- 继续执行下一个微任务，即执行 **then** 的回调，打印 **promise2**
+- 上一个宏任务所有事都做完了，开始下一个宏任务，就是定时器，打印 **settimeout**
 
 [文章来源](https://vue3js.cn/interview/JavaScript/event_loop.html)
