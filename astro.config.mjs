@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, sharpImageService } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import tailwind from '@astrojs/tailwind'
 import react from '@astrojs/react'
@@ -9,7 +9,7 @@ import { remarkReadingTime } from './src/support/time.ts'
 
 export default defineConfig({
   site: SITE.url,
-  image: {},
+  image: { service: sharpImageService({ limitInputPixels: false }) },
   integrations: [
     mdx(),
     sitemap(),
