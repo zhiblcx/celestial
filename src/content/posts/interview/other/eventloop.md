@@ -15,7 +15,7 @@ selected: true
 3. 同步代码放入执行栈中，异步代码等待时机成熟送入任务队列排队
 4. 执行栈执行完毕，会去任务队列看是否有异步任务，有就送到执行栈执行，反复循环查找执行，这个过程就是事件循环(eventloop)
 
-![''](https://s19.aconvert.com/convert/p3r68-cdx67/bthyl-asvo9.gif)
+![''](@images/interview/eventloop/image.gif)
 
 ## 事件循环 宏任务和微任务
 
@@ -46,7 +46,7 @@ js 把异步任务分为**宏任务**和**微任务**
 
 [练习事件循环的网站](https://www.jsv9000.app/)
 
-![](https://s5.aconvert.com/convert/p3r68-cdx67/7lryz-9pfac.gif)
+![''](@images/interview/eventloop/image2.gif)
 
 练习题:
 
