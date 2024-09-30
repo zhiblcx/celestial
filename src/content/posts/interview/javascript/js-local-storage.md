@@ -1,9 +1,9 @@
 ---
 title: 'javascript系列 —— Javascript本地存储'
 description: '面试官：Javascript本地存储的方式有哪些？区别及应用场景？'
-pubDate: '2024-09-08 18:28:00'
+pubDate: '2024-09-30 15:30:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/main/js-local-storage.png
+cardImage: '@images/interview/javascript/main/js-local-storage.png'
 tags: ['interview']
 selected: true
 show: false
@@ -54,7 +54,7 @@ Path=/docs   # /docs/Web/ 下的资源会带 Cookie 首部
 关于 **cookie** 的使用如下：
 
 ```js
-document.cookie = '名字=值';
+document.cookie = '名字=值'
 ```
 
 关于 **cookie** 的修改，首先要确定 **domain** 和 **path** 属性都是相同的才可以，其中有一个不同得时候都会创建出一个新的 **cookie**
@@ -84,7 +84,7 @@ document.cookie =name=bb; domain=aa.net; path=/  # 客户端设置
 设置
 
 ```js
-localStorage.setItem('username','cfangxu');
+localStorage.setItem('username', 'cfangxu')
 ```
 
 获取
@@ -96,7 +96,7 @@ localStorage.getItem('username')
 获取键名
 
 ```js
-localStorage.key(0) //获取第一个键名
+localStorage.key(0) // 获取第一个键名
 ```
 
 删除
@@ -117,8 +117,8 @@ localStorage.clear()
 - 只能存入字符串，无法直接存对象
 
 ```js
-localStorage.setItem('key', {name: 'value'});
-console.log(localStorage.getItem('key')); // '[object, Object]'
+localStorage.setItem('key', { name: 'value' })
+console.log(localStorage.getItem('key')) // '[object, Object]'
 ```
 
 ### sessionStorage
@@ -131,14 +131,14 @@ console.log(localStorage.getItem('key')); // '[object, Object]'
 
 虽然 **Web Storage** 对于存储较少量的数据很有用，但对于存储更大量的结构化数据来说，这种方法不太有用。**IndexedDB** 提供了一个解决方案
 
-#### 优点：
+#### 优点
 
 - 储存量理论上没有上限
 - 所有操作都是异步的，相比 **LocalStorage** 同步操作性能更高，尤其是数据量较大时
 - 原生支持储存 JS 的对象
 - 是个正经的数据库，意味着数据库能干的事它都能干
 
-#### 缺点：
+#### 缺点
 
 - 操作非常繁琐
 - 本身有一定门槛
