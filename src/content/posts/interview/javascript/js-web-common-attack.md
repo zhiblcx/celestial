@@ -52,14 +52,21 @@ XSS 的攻击目标是为了盗取存储在客户端的 **cookie** 或者其他�
 用户输入`"><script>alert('XSS');</script>`，拼接到 HTML 中返回给浏览器。形成了如下的 HTML：
 
 ```html
-<input type="text" value=""><script>alert('XSS');</script>">
+<input type="text" value="" />
+<script>
+  alert('XSS')
+</script>
+">
 <button>搜索</button>
 <div>
-  您搜索的关键词是："><script>alert('XSS');</script>
+  您搜索的关键词是：">
+  <script>
+    alert('XSS')
+  </script>
 </div>
 ```
 
-浏览器无法分辨出 `<script>alert('XSS');</script> `是恶意代码，因而将其执行，试想一下，如果是获取cookie发送对黑客服务器呢？
+浏览器无法分辨出 `<script>alert('XSS');</script>`是恶意代码，因而将其执行，试想一下，如果是获取cookie发送对黑客服务器呢？
 
 根据攻击的来源，XSS攻击可以分成：
 
@@ -139,7 +146,7 @@ DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行
 
 如果用 Vue/React 技术栈，并且不使用 v-html/dangerouslySetInnerHTML 功能，就在前端 render 阶段避免 innerHTML、outerHTML 的 XSS 隐患
 
-DOM 中的内联事件监听器，如 location、onclick、onerror、onload、onmouseover 等，<a> 标签的 href 属性，JavaScript 的 eval()、setTimeout()、setInterval() 等，都能把字符串作为代码运行。如果不可信的数据拼接到字符串中传递给这些 API，很容易产生安全隐患，请务必避免
+DOM 中的内联事件监听器，如 location、onclick、onerror、onload、onmouseover 等，标签的 href 属性，JavaScript 的 eval()、setTimeout()、setInterval() 等，都能把字符串作为代码运行。如果不可信的数据拼接到字符串中传递给这些 API，很容易产生安全隐患，请务必避免
 
 ```js
 <!-- 链接内包含恶意代码 -->
@@ -182,7 +189,7 @@ csrf 可以通过 get 请求，即通过访问 img 的页面后，浏览器自�
     <input type="hidden" name="amount" value="10000" />
     <input type="hidden" name="for" value="hacker" />
 </form>
-<script> document.forms[0].submit(); </script> 
+<script> document.forms[0].submit(); </script>
 ```
 
 访问该页面后，表单会自动提交，相当于模拟用户完成了一次POST操作
@@ -192,9 +199,8 @@ csrf 可以通过 get 请求，即通过访问 img 的页面后，浏览器自�
 访问该页面后，表单会自动提交，相当于模拟用户完成了一次POST操作
 
 ```html
-< a href="http://test.com/csrf/withdraw.php?amount=1000&for=hacker" taget="_blank">
-    重磅消息！！
-<a/>
+< a href="http://test.com/csrf/withdraw.php?amount=1000&for=hacker"
+taget="_blank"> 重磅消息！！ <a />
 ```
 
 ### CSRF的特点
@@ -223,7 +229,7 @@ CSRF通常从第三方网站发起，被攻击的网站无法防止攻击发生�
 - 对于GET请求，Token将附在请求地址之后。对于 POST 请求来说，要在 form 的最后加上
 
 ```html
-<input type=”hidden” name=”csrftoken” value=”tokenvalue”/>
+<input type="”hidden”" name="”csrftoken”" value="”tokenvalue”" />
 ```
 
 - 当用户从客户端得到了Token，再次提交给服务器的时候，服务器需要判断Token的有效性

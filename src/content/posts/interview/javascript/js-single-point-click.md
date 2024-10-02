@@ -3,7 +3,7 @@ title: 'javascript系列 —— 单点登录'
 description: '面试官：什么是单点登录？如何实现？'
 pubDate: '2024-10-01 14:44:00'
 category: 'interview'
-cardImage: '@images/interview/javascript/main/js-scope-chain.jpg'
+cardImage: '@images/interview/javascript/main/js-single-point-click.png'
 tags: ['interview']
 selected: true
 show: false
@@ -19,7 +19,7 @@ SSO 一般都需要一个独立的认证中心（passport），子系统的登�
 
 当一个系统成功登录以后，passport 将会颁发一个令牌给各个子系统，子系统可以拿着令牌会获取各自的受保护资源，为了减少频繁认证，各个子系统在被 passport 授权以后，会建立一个局部会话，在一定时间内可以无需再次向 passport 发起认证
 
-![''](@images/interview/javascript/js-scope-chain/image.png)
+![''](@images/interview/javascript/js-single-point-click/image.png)
 
 上图有四个系统，分别是 Application1、Application2、Application3、和 SSO，当Application1、Application2、Application3 需要登录时，将跳到 SSO 系统，SSO 系统完成登录，其他的应用系统也就随之登录了
 
@@ -49,9 +49,9 @@ SSO 一般都需要一个独立的认证中心（passport），子系统的登�
 
 如果认证中心发现用户尚未登录，则返回登录页面，等待用户登录
 
-如果发现用户已经登录过了，就不会让用户再次登录了，而是会跳转回目标 **URL**，并在跳转前生成一个  ****，拼接在目标**URL** 的后面，回传给目标应用系统
+如果发现用户已经登录过了，就不会让用户再次登录了，而是会跳转回目标 **URL**，并在跳转前生成一个 \***\*，拼接在目标**URL\*\* 的后面，回传给目标应用系统
 
-应用系统拿到 **Token**之后，还需要向认证中心确认下 **Token** 的合法性，防止用户伪造。确认无误后，应用系统记录用户的登录状态，并将  **Token** 写入 **Cookie**，然后给本次访问放行。（注意这个 **Cookie** 是当前应用系统的）当用户再次访问当前应用系统时，就会自动带上这个 **Token**，应用系统验证 **Token** 发现用户已登录，于是就不会有认证中心什么事了
+应用系统拿到 **Token**之后，还需要向认证中心确认下 **Token** 的合法性，防止用户伪造。确认无误后，应用系统记录用户的登录状态，并将 **Token** 写入 **Cookie**，然后给本次访问放行。（注意这个 **Cookie** 是当前应用系统的）当用户再次访问当前应用系统时，就会自动带上这个 **Token**，应用系统验证 **Token** 发现用户已登录，于是就不会有认证中心什么事了
 
 此种实现方式相对复杂，支持跨域，扩展性好，是单点登录的标准做法
 
@@ -67,24 +67,28 @@ SSO 一般都需要一个独立的认证中心（passport），子系统的登�
 
 ```js
 // 获取 token
-var token = result.data.token;
- 
+const token = result.data.token
+
 // 动态创建一个不可见的iframe，在iframe中加载一个跨域HTML
-var iframe = document.createElement("iframe");
-iframe.src = "http://app1.com/localstorage.html";
-document.body.append(iframe);
+const iframe = document.createElement('iframe')
+iframe.src = 'http://app1.com/localstorage.html'
+document.body.append(iframe)
 // 使用postMessage()方法将token传递给iframe
-setTimeout(function () {
-    iframe.contentWindow.postMessage(token, "http://app1.com");
-}, 4000);
-setTimeout(function () {
-    iframe.remove();
-}, 6000);
- 
+setTimeout(() => {
+  iframe.contentWindow.postMessage(token, 'http://app1.com')
+}, 4000)
+setTimeout(() => {
+  iframe.remove()
+}, 6000)
+
 // 在这个iframe所加载的HTML中绑定一个事件监听器，当事件被触发时，把接收到的token数据写入localStorage
-window.addEventListener('message', function (event) {
+window.addEventListener(
+  'message',
+  (event) => {
     localStorage.setItem('token', event.data)
-}, false);
+  },
+  false
+)
 ```
 
 前端通过 **iframe+postMessage()** 方式，将同一份 **Token** 写入到了多个域下的 **LocalStorage** 中，前端每次在向后端发送请求之前，都会主动从 **LocalStorage** 中读取 **Token** 并在请求中携带，这样就实现了同一份**Token** 被多个域所共享
@@ -95,7 +99,7 @@ window.addEventListener('message', function (event) {
 
 单点登录的流程图如下所示：
 
-![''](@images/interview/javascript/js-scope-chain/image2.png)
+![''](@images/interview/javascript/js-single-point-click/image2.png)
 
 - 用户访问系统1的受保护资源，系统1发现用户未登录，跳转至sso认证中心，并将自己的地址作为参数
 - sso认证中心发现用户未登录，将用户引导至登录页面
