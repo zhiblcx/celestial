@@ -1,6 +1,6 @@
 ---
-title: 'javascript系列 —— 正则表达式'
-description: '面试官：说说你对正则表达式的理解？应用场景？'
+title: 'javascript系列 —— bind、call、apply 区别'
+description: '面试官：bind、call、apply 区别？如何实现一个bind?'
 pubDate: '2024-09-20 15:29:00'
 category: 'interview'
 cardImage: '@images/interview/javascript/main/js-bind、call、apply-different.png'
