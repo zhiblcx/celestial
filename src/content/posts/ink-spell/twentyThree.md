@@ -3,7 +3,7 @@ title: 'linux 安装 pnpm 后不生效'
 description: '解决linux中npm install pnpm -g后pnpm命令不生效的情况'
 pubDate: '2024-09-22 16:58:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyTwo.png'
+cardImage: '@images/ink-spell/main/twentyThree.png'
 tags: ['ink-spell']
 selected: false
 ---
