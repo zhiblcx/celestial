@@ -3,7 +3,7 @@ title: 'http系列 —— HTTP 和 HTTPS'
 description: '面试官：什么是HTTP? HTTP 和 HTTPS 的区别?'
 pubDate: '2024-09-15 18:49:00'
 category: 'interview'
-cardImage: '@images/interview/http/main/http-html-htmls.png'
+cardImage: '@images/interview/http/main/http-http-https.png'
 tags: ['interview']
 selected: true
 show: false
@@ -12,7 +12,7 @@ show: false
 ## 一、HTTP
 
 **HTTP** (HyperText Transfer Protocol)，即**超文本运输协议**，是实现网络通信的一种规范
-![''](@images/interview/http/http-html-htmls/image.png)
+![''](@images/interview/http/http-http-https/image.png)
 
 在计算机和网络世界有，存在不同的协议，如广播协议、寻址协议、路由协议等等......
 
@@ -38,11 +38,11 @@ show: false
 
 SSL 协议位于 **TCP/IP** 协议与各种应用层协议之间，浏览器和服务器在使用 **SSL** 建立连接时需要选择一组恰当的加密算法来实现安全通信，为数据通讯提供安全支持
 
-![''](@images/interview/http/http-html-htmls/image2.png)
+![''](@images/interview/http/http-http-https/image2.png)
 
 流程图如下所示：
 
-![''](@images/interview/http/http-html-htmls/image3.png)
+![''](@images/interview/http/http-http-https/image3.png)
 
 - 首先客户端通过 URL 访问服务器建立SSL连接
 - 服务端收到客户端请求后，会将网站支持的证书信息（证书中包含公钥）传送一份给客户端
