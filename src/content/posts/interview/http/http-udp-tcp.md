@@ -1,5 +1,5 @@
 ---
-title: 'css系列 —— UDP 与 TCP'
+title: 'http系列 —— UDP 与 TCP'
 description: '面试官：如何理解UDP 和 TCP? 区别? 应用场景?'
 pubDate: '2024-09-15 19:40:00'
 category: 'interview'

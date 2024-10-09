@@ -1,6 +1,6 @@
 ---
-title: 'css系列 —— BFC'
-description: '面试官：谈谈你对BFC的理解？'
+title: 'http系列 —— TCP/IP协议'
+description: '面试官：如何理解TCP/IP协议?'
 pubDate: '2024-09-11 11:43:00'
 category: 'interview'
 cardImage: '@images/interview/http/main/http-tcp-ip.png'

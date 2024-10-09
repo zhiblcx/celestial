@@ -1,5 +1,5 @@
 ---
-title: 'html系列 —— HTTP 和 HTTPS'
+title: 'http系列 —— HTTP 和 HTTPS'
 description: '面试官：什么是HTTP? HTTP 和 HTTPS 的区别?'
 pubDate: '2024-09-15 18:49:00'
 category: 'interview'

@@ -1,5 +1,5 @@
 ---
-title: 'html系列 —— osi 七层模型'
+title: 'http系列 —— osi 七层模型'
 description: '面试官：如何理解OSI七层模型?'
 pubDate: '2024-09-11 11:43:00'
 category: 'interview'
