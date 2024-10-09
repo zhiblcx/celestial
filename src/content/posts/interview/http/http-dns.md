@@ -1,5 +1,5 @@
 ---
-title: 'html系列 —— HTTP 和 HTTPS'
+title: 'http系列 —— HTTP 和 HTTPS'
 description: '面试官：DNS协议 是什么？说说DNS 完整的查询过程?'
 pubDate: '2024-10-09 16:48:00'
 category: 'interview'
@@ -26,7 +26,7 @@ DNS（Domain Names System），域名系统，是互联网一项服务，是进�
 
 ![''](@images/interview/http/http-dns/image2.jpg)
 
-例如 www.xxx.com，www 为三级域名、xxx 为二级域名、com 为顶级域名，系统为用户做了兼容，域名末尾的根域名.一般不需要输入
+例如 <www.xxx.com，www> 为三级域名、xxx 为二级域名、com 为顶级域名，系统为用户做了兼容，域名末尾的根域名.一般不需要输入
 
 在域名的每一层都会有一个域名服务器，如下图：
 
@@ -53,7 +53,7 @@ DNS 查询的方式有两种：
 计算机中 **DNS** 的记录也分成了两种缓存方式：
 
 - 浏览器缓存：浏览器在获取网站域名的实际 IP 地址后会对其进行缓存，减少网络请求的损耗
-- 操作系统缓存：操作系统的缓存其实是用户自己配置的  **hosts**  文件
+- 操作系统缓存：操作系统的缓存其实是用户自己配置的 **hosts** 文件
 
 ## 五、查询过程
 
