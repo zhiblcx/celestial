@@ -24,13 +24,13 @@ DNS（Domain Names System），域名系统，是互联网一项服务，是进�
 
 域名是一个具有层次的结构，从上到下一次为根域名、顶级域名、二级域名、三级域名...
 
-![''](@images/interview/http/http-dns/image2.jpg)
+![''](@images/interview/http/http-dns/image2.png)
 
 例如 <www.xxx.com，www> 为三级域名、xxx 为二级域名、com 为顶级域名，系统为用户做了兼容，域名末尾的根域名.一般不需要输入
 
 在域名的每一层都会有一个域名服务器，如下图：
 
-![''](@images/interview/http/http-dns/image3.jpg)
+![''](@images/interview/http/http-dns/image3.png)
 
 除此之外，还有电脑默认的本地域名服务器
 
@@ -40,11 +40,11 @@ DNS 查询的方式有两种：
 
 - 递归查询：如果 A 请求 B，那么 B 作为请求的接收者一定要给 A 想要的答案
 
-![''](@images/interview/http/http-dns/image4.jpg)
+![''](@images/interview/http/http-dns/image4.png)
 
 - 迭代查询：如果接收者 B 没有请求者 A 所需要的准确内容，接收者 B 将告诉请求者 A，如何去获得这个内容，但是自己并不去发出请求
 
-![''](@images/interview/http/http-dns/image5.jpg)
+![''](@images/interview/http/http-dns/image5.png)
 
 ## 四、域名缓存
 
@@ -72,6 +72,6 @@ DNS 查询的方式有两种：
 
 流程如下图所示：
 
-![''](@images/interview/http/http-dns/image6.jpg)
+![''](@images/interview/http/http-dns/image6.png)
 
 [文章来源](https://vue3js.cn/interview/http/CDN.html)
