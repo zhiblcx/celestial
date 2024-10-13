@@ -1,6 +1,6 @@
 ---
-title: 'http系列 —— HTTPS 安全性'
-description: '面试官：为什么说HTTPS比HTTP安全? HTTPS是如何保证安全的？'
+title: 'http系列 —— 状态码'
+description: '面试官：说说HTTP 常见的状态码有哪些，适用场景？'
 pubDate: '2024-10-09 21:14:00'
 category: 'interview'
 cardImage: '@images/interview/http/main/http-status-code.jpg'
