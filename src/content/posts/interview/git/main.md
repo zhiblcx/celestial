@@ -6,7 +6,6 @@ category: 'interview'
 cardImage: '@images/interview/git/main/main.png'
 tags: ['interview', 'git']
 selected: true
-show: false
 ---
 
 ## [git的常用命令](https://celestial-virid.vercel.app/posts/interview/git/git-common-order)
