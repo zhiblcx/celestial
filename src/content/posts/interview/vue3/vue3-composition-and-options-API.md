@@ -23,13 +23,13 @@ show: false
 
 ## 正文
 
-###  一、Options Api
+### 一、Options Api
 
 **Options API**，即大家常说的选项API，即以 **vue** 为后缀的文件，通过定义 **methods**，**computed**，**watch**，**data** 等属性与方法，共同处理页面逻辑
 
 如下图：
 
-![''](@images/interview/vue3/vue3-composition-and-options-API/image.png)
+![''](@images/interview/vue3/vue3-composition-and-options-API/image.jpg)
 
 可以看到 **Options** 代码编写方式，如果是组件状态，则写在 **data** 属性上，如果是方法，则写在 **methods** 属性上...
 
@@ -43,7 +43,7 @@ show: false
 
 即使项目很大，功能很多，我们都能快速的定位到这个功能所用到的所有 API
 
-![''](@images/interview/vue3/vue3-composition-and-options-API/image2.png)
+![''](@images/interview/vue3/vue3-composition-and-options-API/image2.jpg)
 
 ### 三、对比
 
@@ -58,7 +58,7 @@ show: false
 
 假设一个组件是一个大型组件，其内部有很多处理逻辑关注点（对应下图不用颜色）
 
-![''](@images/interview/vue3/vue3-composition-and-options-API/image3.png)
+![''](@images/interview/vue3/vue3-composition-and-options-API/image3.jpg)
 
 可以看到，这种碎片化使得理解和维护复杂组件变得困难
 
@@ -72,22 +72,22 @@ show: false
 
 ```js
 function useCount() {
-    let count = ref(10);
-    let double = computed(() => {
-        return count.value * 2;
-    });
+  const count = ref(10)
+  const double = computed(() => {
+    return count.value * 2
+  })
 
-    const handleConut = () => {
-        count.value = count.value * 2;
-    };
+  const handleConut = () => {
+    count.value = count.value * 2
+  }
 
-    console.log(count);
+  console.log(count)
 
-    return {
-        count,
-        double,
-        handleConut,
-    };
+  return {
+    count,
+    double,
+    handleConut,
+  }
 }
 ```
 
@@ -95,20 +95,20 @@ function useCount() {
 
 ```js
 export default defineComponent({
-    setup() {
-        const { count, double, handleConut } = useCount();
-        return {
-            count,
-            double,
-            handleConut
-        }
-    },
-});
+  setup() {
+    const { count, double, handleConut } = useCount()
+    return {
+      count,
+      double,
+      handleConut,
+    }
+  },
+})
 ```
 
 再来一张图进行对比，可以很直观地感受到 **Composition API** 在逻辑组织方面的优势，以后修改一个属性功能的时候，只需要跳到控制该属性的方法中即可
 
-![''](@images/interview/vue3/vue3-composition-and-options-API/image4.png)
+![''](@images/interview/vue3/vue3-composition-and-options-API/image4.jpg)
 
 #### 逻辑复用
 
@@ -122,38 +122,38 @@ export const MoveMixin = {
     return {
       x: 0,
       y: 0,
-    };
+    }
   },
 
   methods: {
     handleKeyup(e) {
-      console.log(e.code);
+      console.log(e.code)
       // 上下左右 x y
       switch (e.code) {
-        case "ArrowUp":
-          this.y--;
-          break;
-        case "ArrowDown":
-          this.y++;
-          break;
-        case "ArrowLeft":
-          this.x--;
-          break;
-        case "ArrowRight":
-          this.x++;
-          break;
+        case 'ArrowUp':
+          this.y--
+          break
+        case 'ArrowDown':
+          this.y++
+          break
+        case 'ArrowLeft':
+          this.x--
+          break
+        case 'ArrowRight':
+          this.x++
+          break
       }
     },
   },
 
   mounted() {
-    window.addEventListener("keyup", this.handleKeyup);
+    window.addEventListener('keyup', this.handleKeyup)
   },
 
   unmounted() {
-    window.removeEventListener("keyup", this.handleKeyup);
+    window.removeEventListener('keyup', this.handleKeyup)
   },
-};
+}
 ```
 
 然后在组件中使用
@@ -186,45 +186,45 @@ mixins: [mousePositionMixin, fooMixin, barMixin, otherMixin]
 现在通过 **Compositon API** 这种方式改写上面的代码
 
 ```js
-import { onMounted, onUnmounted, reactive } from "vue";
+import { onMounted, onUnmounted, reactive } from 'vue'
 export function useMove() {
   const position = reactive({
     x: 0,
     y: 0,
-  });
+  })
 
   const handleKeyup = (e) => {
-    console.log(e.code);
+    console.log(e.code)
     // 上下左右 x y
     switch (e.code) {
-      case "ArrowUp":
+      case 'ArrowUp':
         // y.value--;
-        position.y--;
-        break;
-      case "ArrowDown":
+        position.y--
+        break
+      case 'ArrowDown':
         // y.value++;
-        position.y++;
-        break;
-      case "ArrowLeft":
+        position.y++
+        break
+      case 'ArrowLeft':
         // x.value--;
-        position.x--;
-        break;
-      case "ArrowRight":
+        position.x--
+        break
+      case 'ArrowRight':
         // x.value++;
-        position.x++;
-        break;
+        position.x++
+        break
     }
-  };
+  }
 
   onMounted(() => {
-    window.addEventListener("keyup", handleKeyup);
-  });
+    window.addEventListener('keyup', handleKeyup)
+  })
 
   onUnmounted(() => {
-    window.removeEventListener("keyup", handleKeyup);
-  });
+    window.removeEventListener('keyup', handleKeyup)
+  })
 
-  return { position };
+  return { position }
 }
 ```
 
