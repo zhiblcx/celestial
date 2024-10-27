@@ -24,6 +24,10 @@ selected: false
 
 并且双token比单token除了安全性，逻辑上整体也要简单严谨不少，因此很多人都在使用这一方案，这也是用户体验、开发体验、应用安全的之间互相博弈平衡的结果(当然这也只是针对部分场景出现的方案，未来也许还会改变或者有新的方案，你也会发现，每次新增改变都可以规避一种风险，那同时也会增加开发成本)
 
+## 示意图
+
+![''](@images/ink-spell/twentySix/image.png)
+
 ## 双 token 的原理
 
 access token 是用来访问资源的，过期时间短，比如 10 分钟。refresh token 是用来刷新 access token 的，过期时间长，比如 7 天。
@@ -177,3 +181,5 @@ async function refreshToken() {
 [🚀 前端无感刷新token机制（一文说明白）](https://juejin.cn/post/7423210982547767334)
 
 [基于 Axios 封装一个完美的双 token 无感刷新](https://juejin.cn/post/7271139265442021391?from=search-suggest)
+
+[告别频繁登录：教你用Axios实现无感知双Token刷新](https://juejin.cn/post/7406992576513589286)

@@ -8,6 +8,8 @@ tags: ['ink-spell', 'prisma', 'seed']
 selected: false
 ---
 
+## Prisma 连接数据库
+
 基于在 prisma 已经安装完成，并且可以连接数据库
 
 schema.prisma 文件如下：

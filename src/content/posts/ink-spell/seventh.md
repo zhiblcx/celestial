@@ -8,7 +8,7 @@ tags: ['ink-spell', 'LF', 'CRLF']
 selected: false
 ---
 
-## vscode解决windows换行CRLF与LF冲突
+## vscode 解决 windows 换行CRLF与LF冲突
 
 首先安装 **EditorConfig for VS Code** 插件
 
