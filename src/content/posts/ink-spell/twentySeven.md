@@ -293,9 +293,9 @@ export class AppController {
 在 main.ts 中配置：
 
 ```ts
- // 使用全局验证管道，进行国际化验证
+// 使用全局验证管道，进行国际化验证
 app.useGlobalPipes(new I18nValidationPipe())
- // 使用全局异常过滤器，处理国际化验证异常
+// 使用全局异常过滤器，处理国际化验证异常
 app.useGlobalFilters(new I18nValidationExceptionFilter())
 ```
 
@@ -307,10 +307,10 @@ app.useGlobalFilters(new I18nValidationExceptionFilter())
 
 ```ts
 app.useGlobalFilters(
-   new I18nValidationExceptionFilter({
-     detailedErrors: false, // 设置是否显示详细错误信息
-   }),
-);
+  new I18nValidationExceptionFilter({
+    detailedErrors: false, // 设置是否显示详细错误信息
+  })
+)
 ```
 
 ![''](@images/ink-spell/twentySeven/image5.png)
@@ -321,9 +321,7 @@ app.useGlobalFilters(
 
 通过这些配置，Nest 项目可以灵活支持多种语言，满足国际化需求。
 
-
-
-> 如果按照如上流程没有出现这些错误信息，可能是 *ValidationPipe* 作为一个全局管道了，把这个删掉就可以了
+> 如果按照如上流程没有出现这些错误信息，可能是 _ValidationPipe_ 作为一个全局管道了，把这个删掉就可以了
 
 ## 参考文献
 
