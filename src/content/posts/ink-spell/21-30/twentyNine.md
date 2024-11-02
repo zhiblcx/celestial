@@ -3,7 +3,7 @@ title: 'postgresql 数据导入与导出'
 description: 'postgresql 修改字段之后一个数据的迁移'
 pubDate: '2024-11-01 22:12:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyNine.png'
+cardImage: '@images/ink-spell/main/21-30/twentyNine.png'
 tags: ['ink-spell']
 selected: false
 ---

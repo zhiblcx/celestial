@@ -3,7 +3,7 @@ title: '瀑布式布局'
 description: '瀑布式布局'
 pubDate: '2024-10-05 07:17:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyFour.png'
+cardImage: '@images/ink-spell/main/21-30/twentyFour.png'
 tags: ['ink-spell']
 selected: false
 ---

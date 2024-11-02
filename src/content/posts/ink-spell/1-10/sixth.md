@@ -3,7 +3,7 @@ title: 'prettier'
 description: '代码格式化'
 pubDate: '2024-07-22 11:24:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/sixth.png'
+cardImage: '@images/ink-spell/main/1-10/sixth.png'
 tags: ['ink-spell', 'prettier']
 selected: false
 ---

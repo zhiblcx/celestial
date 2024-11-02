@@ -4,7 +4,7 @@ description: '解决导入不重复书籍'
 pubDate: '2024-07-18 09:00:00'
 updateDate: '2024-08-09 14:45:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/first.jpg'
+cardImage: '@images/ink-spell/main/1-10/first.jpg'
 tags: ['ink-spell', 'spark-md5']
 selected: false
 ---

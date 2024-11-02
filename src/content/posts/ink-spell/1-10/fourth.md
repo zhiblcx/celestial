@@ -3,7 +3,7 @@ title: '我的书架'
 description: '用户自己添加书架导航，并且可以把书添加到添加的书架中'
 pubDate: '2024-07-20 12:44:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/fourth.png'
+cardImage: '@images/ink-spell/main/1-10/fourth.png'
 tags: ['ink-spell']
 selected: false
 ---

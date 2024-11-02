@@ -3,7 +3,7 @@ title: '用宝塔部署后端'
 description: '用宝塔部署 NestJs'
 pubDate: '2024-08-30 15:28:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/nineteenth.jpg'
+cardImage: '@images/ink-spell/main/11-20/nineteenth.jpg'
 tags: ['ink-spell', 'nestjs']
 selected: false
 ---

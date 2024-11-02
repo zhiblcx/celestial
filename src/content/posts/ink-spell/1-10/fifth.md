@@ -4,7 +4,7 @@ description: '解决阅读书籍问题'
 pubDate: '2024-07-21 22:33:00'
 updateDate: '2024-08-11 20:31:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/fifth.png'
+cardImage: '@images/ink-spell/main/1-10/fifth.png'
 tags: ['ink-spell']
 selected: false
 ---

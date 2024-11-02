@@ -3,7 +3,7 @@ title: '压缩图片'
 description: '通过 upng-js 压缩 .png 的图片'
 pubDate: '2024-08-09 20:38:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/fifteenth.jpg'
+cardImage: '@images/ink-spell/main/11-20/fifteenth.jpg'
 tags: ['ink-spell', 'upng-js']
 selected: false
 ---

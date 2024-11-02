@@ -3,7 +3,7 @@ title: '项目三大难点'
 description: '关于 ink-spell 三大难点'
 pubDate: '2024-10-28 21:45:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyEight.png'
+cardImage: '@images/ink-spell/main/21-30/twentyEight.png'
 tags: ['ink-spell']
 selected: false
 ---

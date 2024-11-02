@@ -3,7 +3,7 @@ title: '暗夜模式切换、扩散动画'
 description: '暗夜模式切换、扩散动画'
 pubDate: '2024-09-18 19:53:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyTwo.png'
+cardImage: '@images/ink-spell/main/21-30/twentyTwo.png'
 tags: ['ink-spell']
 selected: false
 ---
@@ -36,17 +36,25 @@ function ThemeToggle({ size = 24 }) {
       // 传入点击事件，从点击处开始扩散。否则，从右上角开始扩散
       const x = event?.clientX ?? window.innerWidth
       const y = event?.clientY ?? 0
-      const endRadius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))
+      const endRadius = Math.hypot(
+        Math.max(x, innerWidth - x),
+        Math.max(y, innerHeight - y)
+      )
       void transition.ready.then(() => {
-        const clipPath = [`circle(0px at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`]
+        const clipPath = [
+          `circle(0px at ${x}px ${y}px)`,
+          `circle(${endRadius}px at ${x}px ${y}px)`,
+        ]
         document.documentElement.animate(
           {
-            clipPath: willDark ? clipPath : [...clipPath].reverse()
+            clipPath: willDark ? clipPath : [...clipPath].reverse(),
           },
           {
             duration: 500,
             easing: 'ease-in',
-            pseudoElement: willDark ? '::view-transition-new(root)' : '::view-transition-old(root)'
+            pseudoElement: willDark
+              ? '::view-transition-new(root)'
+              : '::view-transition-old(root)',
           }
         )
       })

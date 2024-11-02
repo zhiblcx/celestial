@@ -3,7 +3,7 @@ title: 'prisma seed'
 description: 'prisma seed 示例与多文件 Prisma 架构'
 pubDate: '2024-07-25 12:55:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/tenth.jpg'
+cardImage: '@images/ink-spell/main/1-10/tenth.jpg'
 tags: ['ink-spell', 'prisma', 'seed']
 selected: false
 ---

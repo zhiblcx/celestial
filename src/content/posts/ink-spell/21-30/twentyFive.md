@@ -3,7 +3,7 @@ title: 'nest 使用 邮箱验证码'
 description: 'nest 使用 邮箱验证码'
 pubDate: '2024-10-07 07:29:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentyFive.png'
+cardImage: '@images/ink-spell/main/21-30/twentyFive.png'
 tags: ['ink-spell']
 selected: false
 ---
@@ -95,11 +95,11 @@ export class Email {
 
 ### 4.使用方法
 
- ```js
- await new Email().send({
-   email: request.email,
-   subject: "WEBXUE - 欢迎注册"
- });
- ```
+```js
+await new Email().send({
+  email: request.email,
+  subject: 'WEBXUE - 欢迎注册',
+})
+```
 
 [参考文章](https://juejin.cn/post/7220725356457164859)

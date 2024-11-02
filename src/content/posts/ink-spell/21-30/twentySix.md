@@ -3,7 +3,7 @@ title: '实现双token'
 description: '用户无感知、稳定可靠的双Token刷新机制'
 pubDate: '2024-10-24 08:14:00'
 category: 'ink-spell'
-cardImage: '@images/ink-spell/main/twentySix.png'
+cardImage: '@images/ink-spell/main/21-30/twentySix.png'
 tags: ['ink-spell']
 selected: false
 ---
