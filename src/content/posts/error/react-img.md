@@ -3,7 +3,7 @@ title: 'react 引入静态资源'
 description: 'vite + react 引入静态资源错误'
 pubDate: '2024-07-12 15:48:00'
 category: 'error'
-cardImage: '@images/error/react-img.jpg'
+cardImage: '@images/error/main/react-img.jpg'
 tags: ['react', 'image', 'error']
 selected: true
 ---

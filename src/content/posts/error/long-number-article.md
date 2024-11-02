@@ -3,7 +3,7 @@ title: 'CSS怎么解决无空格的字母、数字过长不自动换行的问题
 description: 'CSS怎么解决无空格的字母、数字过长不自动换行的问题'
 pubDate: '2024-08-15 17:20:00'
 category: 'error'
-cardImage: '@images/error/long-number-article.jpg'
+cardImage: '@images/error/main/long-number-article.jpg'
 tags: ['ink-spell']
 selected: true
 ---

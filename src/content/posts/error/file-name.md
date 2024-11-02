@@ -3,7 +3,7 @@ title: 'File 文件名乱码'
 description: '前端传给后端文件名，文件名却是乱码'
 pubDate: '2024-08-03 17:04:00'
 category: 'error'
-cardImage: '@images/error/file-name.jpg'
+cardImage: '@images/error/main/file-name.jpg'
 tags: ['ink-spell', 'file', 'error']
 selected: true
 ---
