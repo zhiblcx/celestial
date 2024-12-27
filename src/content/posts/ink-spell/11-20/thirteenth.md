@@ -1,5 +1,5 @@
 ---
-title: '配置返回格式swagger'
+title: '配置返回格式swagger 和 响应类'
 description: 'NestJs 配置返回格式swagger'
 pubDate: '2024-07-30 18:33:00'
 category: 'ink-spell'
@@ -217,4 +217,92 @@ updateUserInfo(
 }
 ```
 
-[本章来源](https://juejin.cn/post/7274182001933172772)
+## 配置响应类
+
+返回实例与响应类都是固定格式，更加友好
+
+返回单个格式：
+
+```json
+{
+    "data":"",
+    "code":"",
+    "message":""
+}
+```
+
+代码如下：
+
+```js
+import { ApiPropertyOptional } from '@nestjs/swagger';
+
+export class R<T = any> {
+  @ApiPropertyOptional({ description: '提示信息', example: '请求成功' })
+  message?: string;
+  @ApiPropertyOptional({ description: '响应数据', type: () => Object })
+  data?: T;
+  @ApiPropertyOptional({ description: '响应码', example: '200' })
+  code?: number;
+
+  constructor(r?: R<T>) {
+    if (r.message === undefined) {
+      this.message = '请求成功';
+    }
+    if (r.code === undefined) {
+      this.code = 200;
+    }
+    Object.assign(this, r);
+  }
+}
+```
+
+使用如下：
+
+```js
+ return new R({
+        data: await this.generateToken({ userId, account, roles }),
+        message: this.translation.t('prompt.refresh_successful'),
+      });
+```
+
+如果有分页，那我们再加一个泛型
+
+```js
+import { ApiPropertyOptional } from '@nestjs/swagger';
+
+export class E<T = any> {
+  @ApiPropertyOptional({ description: '数据', example: [] })
+  items?: T;
+  @ApiPropertyOptional({ description: '总条目数', example: 0 })
+  totalItems?: number;
+  @ApiPropertyOptional({ description: '总页数', example: 0 })
+  totalPages?: number;
+  @ApiPropertyOptional({ description: '当前页数', example: 0 })
+  currentPage?: number;
+  @ApiPropertyOptional({ description: '每页显示的条目', example: 0 })
+  itemsPerPage?: number;
+
+  constructor(e?: E<T>) {
+    Object.assign(this, e);
+  }
+}
+```
+
+使用如下：
+
+```js
+  return new R({
+      message: this.translation.t('prompt.acquire_successful'),
+      data: new E({
+        items: followerWithMutual,
+        currentPage: page,
+        itemsPerPage: limit,
+      }),
+    });
+```
+
+这样就与示例对上了，方便很多，也去除许多重复代码。
+
+## 参考文献
+
+[nestjs-swagger、参数校验、请求响应配置](https://juejin.cn/post/7274182001933172772)
