@@ -4,7 +4,7 @@ description: 'nest + react 实现 github 第三方登录'
 pubDate: '2024-11-19 19:34:00'
 category: 'ink-spell'
 cardImage: '@images/ink-spell/main/31-40/thirtyOne.png'
-tags: ['ink-spell']
+tags: ['ink-spell', 'oauth']
 selected: false
 ---
 
