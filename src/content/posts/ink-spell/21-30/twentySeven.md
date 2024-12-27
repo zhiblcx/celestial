@@ -4,7 +4,7 @@ description: 'nest-i18n 实现后端国际化'
 pubDate: '2024-10-25 16:49:00'
 category: 'ink-spell'
 cardImage: '@images/ink-spell/main/21-30/twentySeven.png'
-tags: ['ink-spell', 'download']
+tags: ['ink-spell', 'nest']
 selected: false
 ---
 
